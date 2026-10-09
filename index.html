@@ -184,7 +184,7 @@ html[lang="ar"] .serv .price small{letter-spacing:0;text-transform:none}
 .gal-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
 .gal-tag{position:absolute;top:12px;inset-inline-start:12px;z-index:2;background:rgba(192,82,44,.94);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:999px}
 html[lang="ar"] .gal-tag{letter-spacing:0;text-transform:none}
-.shot{position:relative;border-bottom:1px solid var(--line);aspect-ratio:3/2}
+.shot{position:relative;border-bottom:1px solid var(--line);aspect-ratio:3/2;cursor:zoom-in}
 .shot-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--bg2);border-bottom:1px solid var(--line)}
 .shot-bar i{width:7px;height:7px;border-radius:50%;background:var(--line)}
 .shot-bar i:first-child{background:var(--terra)}
@@ -263,10 +263,13 @@ html[lang="ar"] .gal-tag{letter-spacing:0;text-transform:none}
 .mock-kicker,.mock-title,.mock-line,.mock-book{position:relative;z-index:1}
 .mock-arch{z-index:1}
 /* generated website-mockup image overlays (cover CSS demos when present) */
-.shot-overlay{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
+.shot-overlay{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gal-card:hover .shot-overlay{transform:scale(1.04)}
 .mb-overlay{position:absolute;inset:0;z-index:10;width:100%;height:100%;object-fit:cover;border-radius:16px}
 /* once the image loads, hide the CSS fallback so the image fills the frame fully */
 .mockup.has-img .browser,.shot.has-img .shot-bar,.shot.has-img .shot-stage{display:none}
+.gal-hint{margin-top:10px;font-size:.84rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.gal-hint svg{width:15px;height:15px;color:var(--gold);flex:none}
 /* phone compression */
 .m-phone .m-nav{padding:4px}
 .m-phone .m-name,.m-phone .m-links{display:none}
@@ -376,6 +379,18 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
 .wa-float svg{width:27px;height:27px}
 .wa-float::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(31,170,85,.5);animation:ring 2.4s infinite}
 @keyframes ring{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.25);opacity:0}}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(5,10,9,.93);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:4vmin}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:84vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.14)}
+.lb-btn{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#faf6ee;font-size:1.5rem;display:grid;place-items:center;transition:.25s;cursor:pointer;line-height:1}
+.lb-btn:hover{background:rgba(201,162,75,.3);border-color:var(--gold)}
+.lb-close{top:20px;inset-inline-end:20px}
+.lb-prev{inset-inline-start:16px;top:50%;transform:translateY(-50%)}
+.lb-next{inset-inline-end:16px;top:50%;transform:translateY(-50%)}
+[dir="rtl"] .lb-prev,[dir="rtl"] .lb-next{transform:translateY(-50%) scaleX(-1)}
+.lb-hint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.55);font-size:.78rem;white-space:nowrap}
 
 /* ---------- REVEAL ---------- */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease var(--d,0s),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
@@ -588,6 +603,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       <div class="sec-label" data-i18n="gal.label">Galerie</div>
       <h2 data-i18n="gal.h2">Exemples de sites</h2>
       <p class="sec-sub" data-i18n="gal.sub">Le style et les possibilités, présentés en avant-première.</p>
+      <p class="gal-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8"/></svg><span data-i18n="gal.hint">Click any example to view it full screen.</span></p>
     </div>
     <div class="gal-banner rv" role="note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4.5M12 17.3v.2"/></svg>
@@ -816,6 +832,15 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-2.9-.4-4.1-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.6 8.4c.4 2.9 2.7 5.2 5.6 5.6l1-1.5-2.1-1.2-1 .9c-.9-.7-1.6-1.4-2.3-2.3l.9-1-1.2-2.1-1.5 1Z"/></svg>
 </a>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size preview">
+  <img id="lbImg" src="" alt="Full size website preview">
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close">×</button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous">‹</button>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next">›</button>
+  <span class="lb-hint">Esc to close · arrows to browse</span>
+</div>
+
 <script>
 /* ============================================================
    CONFIG — TOUTES LES VALEURS SONT RENSEIGNÉES / ALL VALUES SET
@@ -869,7 +894,8 @@ const I18N = {
     "proc.s2t": "Devis gratuit", "proc.s2d": "Vous recevez une proposition claire, sans engagement.",
     "proc.s3t": "Design & validation", "proc.s3d": "Je crée le design, vous validez chaque étape.",
     "proc.s4t": "Livraison", "proc.s4d": "Votre site est en ligne, avec tous vos accès.",
-    "gal.label": "Galerie", "gal.h2": "Exemples de sites", "gal.sub": "Le style et les possibilités, présentés en avant-première.",
+    "gal.label": "Galerie", "gal.h2": "Exemples de sites",     "gal.sub": "Le style et les possibilités, présentés en avant-première.",
+    "gal.hint": "Click any example to view it full screen.",
     "gal.banner_t": "Aperçu de ce que vous obtenez",
     "gal.banner_d": "Ces aperçus montrent le niveau de design, de détail et d'adaptation mobile que vous obtenez — chaque site est conçu sur mesure pour votre établissement, jamais un template.",
     "gal.tag": "Aperçu",
@@ -954,7 +980,8 @@ const I18N = {
     "proc.s2t": "عرض سعر مجاني", "proc.s2d": "تتلقى مقترحاً واضحاً دون التزام.",
     "proc.s3t": "التصميم والاعتماد", "proc.s3d": "أصمم الموقع وتعتمد كل مرحلة.",
     "proc.s4t": "التسليم", "proc.s4d": "يصبح موقعك على الإنترنت مع جميع بيانات الدخول.",
-    "gal.label": "المعرض", "gal.h2": "أمثلة على مواقع", "gal.sub": "الأسلوب والإمكانيات، في معاينة خاصة.",
+    "gal.label": "المعرض", "gal.h2": "أمثلة على مواقع",     "gal.sub": "الأسلوب والإمكانيات، في معاينة خاصة.",
+    "gal.hint": "انقر على أي مثال لعرضه بملء الشاشة.",
     "gal.banner_t": "معاينة لما ستحصل عليه",
     "gal.banner_d": "تُظهر هذه المعاينات مستوى التصميم والتفاصيل والتكيف مع الجوال الذي ستحصل عليه — كل موقع يُصمم خصيصاً لمنشأتك، وليس قالباً جاهزاً.",
     "gal.tag": "معاينة",
@@ -1158,6 +1185,44 @@ const I18N = {
     ph.className = "m-phone";
     ph.appendChild(buildMini(cfg, cfg.p));
     stage.appendChild(ph);
+  });
+
+  /* ---------- Lightbox ---------- */
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lbImg");
+  var lbList = [], lbIdx = 0;
+  document.querySelectorAll(".shot-overlay").forEach(function(img){
+    lbList.push(img.getAttribute("src"));
+    img.addEventListener("click", function(){
+      lbIdx = Math.max(0, lbList.indexOf(img.getAttribute("src")));
+      openLb();
+    });
+  });
+  function openLb(){
+    if (!lbList.length) return;
+    lbImg.src = lbList[lbIdx];
+    lbImg.alt = "Full size website preview " + (lbIdx + 1) + " / " + lbList.length;
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLb(){
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  function stepLb(d){
+    lbIdx = (lbIdx + d + lbList.length) % lbList.length;
+    openLb();
+  }
+  document.getElementById("lbClose").addEventListener("click", closeLb);
+  document.getElementById("lbPrev").addEventListener("click", function(e){ e.stopPropagation(); stepLb(-1); });
+  document.getElementById("lbNext").addEventListener("click", function(e){ e.stopPropagation(); stepLb(1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", function(e){
+    if (!lb.classList.contains("open")) return;
+    var rtl = document.documentElement.dir === "rtl";
+    if (e.key === "Escape") closeLb();
+    if (e.key === (rtl ? "ArrowRight" : "ArrowLeft")) stepLb(-1);
+    if (e.key === (rtl ? "ArrowLeft" : "ArrowRight")) stepLb(1);
   });
 
   /* Quote form */
