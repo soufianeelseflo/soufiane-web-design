@@ -250,6 +250,18 @@ html[lang="ar"] .gal-tag{letter-spacing:0;text-transform:none}
 .m-hero.big .m-kick{margin-inline:auto}
 .m-hero.big .m-title,.m-hero.big .m-title2{margin-inline:auto}
 .m-hero.big .m-btns{justify-content:center}
+/* photo layers (real photos fall back to gradient if missing) */
+.m-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,46,39,.30),rgba(7,46,39,.50));z-index:0}
+.m-hero .m-arch{z-index:1}
+.m-hero .m-kick,.m-hero .m-title,.m-hero .m-title2,.m-hero .m-btns{position:relative;z-index:1}
+.m-photo img,.m-room .ph img,.m-cols .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-room .ph,.m-cols .ph{position:relative;overflow:hidden}
+.m-photo::after{z-index:1}
+.mock-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.mock-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(7,46,39,.32),rgba(192,82,44,.32));z-index:0}
+.mock-kicker,.mock-title,.mock-line,.mock-book{position:relative;z-index:1}
+.mock-arch{z-index:1}
 /* phone compression */
 .m-phone .m-nav{padding:4px}
 .m-phone .m-name,.m-phone .m-links{display:none}
@@ -444,6 +456,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       <div class="browser">
         <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">votre-riad.ma</span></div>
         <div class="mock-hero">
+          <img src="img/hero-riad.jpg" alt="" onerror="this.style.display='none'">
           <span class="mock-lang">FR &nbsp;|&nbsp; ع</span>
           <div class="mock-arch"></div>
           <div class="mock-kicker" data-i18n="hero.mock_k">Riad &amp; Spa · Marrakech</div>
@@ -1093,22 +1106,22 @@ const I18N = {
   var MF = '<div class="m-feat"><span class="ic"></span><b></b><b class="w2"></b></div>';
   var MS = {
     nav: '<div class="m-nav"><span class="m-logo"></span><span class="m-name"></span><span class="m-links"><i></i><i></i><i></i></span><span class="m-cta"><i></i></span></div>',
-    hero: '<div class="m-hero"><span class="m-arch"></span><div class="m-kick"></div><div class="m-title"></div><div class="m-title2"></div><div class="m-btns"><span class="m-btn"><i></i></span><span class="m-btn ghost"><i></i></span></div></div>',
-    heroBig: '<div class="m-hero big"><span class="m-arch"></span><div class="m-kick"></div><div class="m-title"></div><div class="m-title2"></div><div class="m-btns"><span class="m-btn"><i></i></span><span class="m-btn ghost"><i></i></span></div></div>',
+    hero: function(img){ return '<div class="m-hero"><img src="img/' + img + '" alt="" onerror="this.style.display=\'none\'"><span class="m-arch"></span><div class="m-kick"></div><div class="m-title"></div><div class="m-title2"></div><div class="m-btns"><span class="m-btn"><i></i></span><span class="m-btn ghost"><i></i></span></div></div>'; },
+    heroBig: function(img){ return '<div class="m-hero big"><img src="img/' + img + '" alt="" onerror="this.style.display=\'none\'"><span class="m-arch"></span><div class="m-kick"></div><div class="m-title"></div><div class="m-title2"></div><div class="m-btns"><span class="m-btn"><i></i></span><span class="m-btn ghost"><i></i></span></div></div>'; },
     feats: '<div class="m-sec"><div class="m-sec-title"></div><div class="m-feats">' + MF + MF + MF + '</div></div>',
-    photos: '<div class="m-sec"><div class="m-photos"><span class="m-photo ph1"></span><span class="m-photo ph2"></span><span class="m-photo ph3"></span></div></div>',
+    photos: function(list){ return '<div class="m-sec"><div class="m-photos">' + list.map(function(s){ return '<span class="m-photo"><img src="img/' + s + '" alt="" onerror="this.style.display=\'none\'"></span>'; }).join('') + '</div></div>'; },
     book: '<div class="m-book"><span class="m-pill"></span><span class="m-pill"></span><span class="m-pill"></span><span class="m-btn"><i></i></span></div>',
-    rooms: '<div class="m-sec"><div class="m-room"><span class="ph ph1"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div><div class="m-room"><span class="ph ph2"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div><div class="m-room"><span class="ph ph3"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div></div>',
+    rooms: function(list){ return '<div class="m-sec">' + list.map(function(s){ return '<div class="m-room"><span class="ph"><img src="img/' + s + '" alt="" onerror="this.style.display=\'none\'"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div>'; }).join('') + '</div>'; },
     strip: '<div class="m-strip"><i></i><i></i><i></i></div>',
     banner: '<div class="m-banner"><b></b><i></i></div>',
-    cols: '<div class="m-cols"><span class="ph ph2"></span><span class="tx"><b></b><b class="w2"></b><b class="w3"></b></span></div>',
+    cols: '<div class="m-cols"><span class="ph"><img src="img/breakfast.jpg" alt="" onerror="this.style.display=\'none\'"></span><span class="tx"><b></b><b class="w2"></b><b class="w3"></b></span></div>',
     foot: '<div class="m-foot"><i></i><i></i><i></i></div>'
   };
   var DEMOS = {
-    g1: { t1:"#0b4f43", t2:"#14685a", t3:"#c9a24b", d:["nav","hero","feats","photos","strip","foot"], p:["nav","hero","feats","book","foot"] },
-    g2: { t1:"#232f6b", t2:"#3d4f9e", t3:"#c9a24b", d:["nav","hero","book","rooms","foot"], p:["nav","hero","book","rooms","foot"] },
-    g3: { t1:"#a9431f", t2:"#c9762f", t3:"#0b4f43", d:["nav","heroBig","cols","feats","banner","foot"], p:["nav","hero","feats","banner","foot"] },
-    g4: { t1:"#33544d", t2:"#0b4f43", t3:"#c9762f", d:["nav","hero","rooms","strip","foot"], p:["nav","hero","rooms","foot"] }
+    g1: { t1:"#0b4f43", t2:"#14685a", t3:"#c9a24b", heroImg:"hero-riad.jpg", photos:["patio.jpg","terrace.jpg","tile.jpg"], d:["nav","hero","feats","photos","strip","foot"], p:["nav","hero","feats","book","foot"] },
+    g2: { t1:"#232f6b", t2:"#3d4f9e", t3:"#c9a24b", heroImg:"hero-hotel.jpg", rooms:["room-1.jpg","room-2.jpg","room-3.jpg"], d:["nav","hero","book","rooms","foot"], p:["nav","hero","book","rooms","foot"] },
+    g3: { t1:"#a9431f", t2:"#c9762f", t3:"#0b4f43", heroImg:"hero-riad.jpg", d:["nav","heroBig","cols","feats","banner","foot"], p:["nav","hero","feats","banner","foot"] },
+    g4: { t1:"#33544d", t2:"#0b4f43", t3:"#c9762f", heroImg:"terrace.jpg", rooms:["room-2.jpg","room-3.jpg","room-1.jpg"], d:["nav","hero","rooms","strip","foot"], p:["nav","hero","rooms","foot"] }
   };
   function buildMini(cfg, blocks){
     var el = document.createElement("div");
@@ -1116,7 +1129,15 @@ const I18N = {
     el.style.setProperty("--t1", cfg.t1);
     el.style.setProperty("--t2", cfg.t2);
     el.style.setProperty("--t3", cfg.t3);
-    blocks.forEach(function(b){ if (MS[b]) el.insertAdjacentHTML("beforeend", MS[b]); });
+    blocks.forEach(function(b){
+      if (typeof MS[b] === "function"){
+        if (b === "hero" || b === "heroBig") el.insertAdjacentHTML("beforeend", MS[b](cfg.heroImg || "hero-riad.jpg"));
+        else if (b === "photos") el.insertAdjacentHTML("beforeend", MS[b](cfg.photos || ["patio.jpg","terrace.jpg","tile.jpg"]));
+        else if (b === "rooms") el.insertAdjacentHTML("beforeend", MS[b](cfg.rooms || ["room-1.jpg","room-2.jpg","room-3.jpg"]));
+      } else if (MS[b]) {
+        el.insertAdjacentHTML("beforeend", MS[b]);
+      }
+    });
     return el;
   }
   document.querySelectorAll(".shot-stage").forEach(function(stage){
