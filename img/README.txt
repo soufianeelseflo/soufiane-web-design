@@ -1,13 +1,12 @@
-Website mockup images — drop here with EXACT filenames:
-C:\Users\PcGamerCasa.Ma\Documents\Default Project\img\
+Website images — INSTALLED (JPG, 3:2 landscape)
+=============================================================
+hero-mockup.jpg   1200x800   hero: laptop + phone website design
+demo-1.jpg        1536x1024  gallery example 1: riad website
+demo-2.jpg        1536x1024  gallery example 2: hotel booking website
+demo-3.jpg        1536x1024  gallery example 3: one-page riad website
+demo-4.jpg        1536x1024  gallery example 4: guesthouse website
 
-hero-mockup.jpg   hero image: laptop + phone showing a riad website design
-demo-1.jpg        gallery example 1: riad showcase website (browser window)
-demo-2.jpg        gallery example 2: hotel website with booking form
-demo-3.jpg        gallery example 3: immersive one-page riad website
-demo-4.jpg        gallery example 4: guesthouse website with room list
-
-All landscape ~1200x800, images OF WEBSITES (browser windows
-with website designs), no text, no letters, no watermarks.
-
-The site shows the built-in CSS demos until these images exist.
+The HTML references these exact .jpg filenames.
+If you ever replace an image, keep the same filename and
+3:2 landscape ratio (e.g. 1200x800 or 1536x1024), and
+save as JPG quality 85 for fast loading.
