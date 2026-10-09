@@ -1,17 +1,13 @@
-Drop your generated photos in this folder with these EXACT filenames:
+Website mockup images — drop here with EXACT filenames:
+C:\Users\PcGamerCasa.Ma\Documents\Default Project\img\
 
-hero-riad.jpg     riad courtyard: horseshoe arches, zellige walls, small pool, orange trees
-hero-hotel.jpg    boutique hotel facade at dusk, warm lights, Moroccan door
-room-1.jpg        bedroom, cream + terracotta, warm light
-room-2.jpg        bedroom with arch window, teal accents
-room-3.jpg        suite with Moroccan textiles and lanterns
-patio.jpg         inner patio with tiles and plants
-terrace.jpg       rooftop terrace, medina view at sunset
-breakfast.jpg     breakfast table, mint tea, pastries
-tile.jpg          zellige tile wall close-up
-spa.jpg           hammam / spa detail (optional)
+hero-mockup.jpg   hero image: laptop + phone showing a riad website design
+demo-1.jpg        gallery example 1: riad showcase website (browser window)
+demo-2.jpg        gallery example 2: hotel website with booking form
+demo-3.jpg        gallery example 3: immersive one-page riad website
+demo-4.jpg        gallery example 4: guesthouse website with room list
 
-Requirements: landscape orientation, ~1200x800 px, warm golden-hour light,
-terracotta / teal / sand palette, photorealistic, no text, no watermarks.
+All landscape ~1200x800, images OF WEBSITES (browser windows
+with website designs), no text, no letters, no watermarks.
 
-The site shows gradient placeholders until the photos are added.
+The site shows the built-in CSS demos until these images exist.
