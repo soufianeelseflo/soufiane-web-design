@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Soufiane Web Design — création de sites web sur mesure pour riads et petits hôtels au Maroc. Devis gratuit, livraison en 2 à 3 semaines.">
+<meta property="og:title" content="Soufiane Web Design — Sites web pour riads et hôtels au Maroc">
+<meta property="og:description" content="Design sur mesure, 100% mobile, réservation en ligne. Devis gratuit et sans engagement.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#faf6ee">
+<title>{{AGENCY_NAME}} — Sites web pour riads et hôtels au Maroc</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b4f43'/%3E%3Cpath d='M50 14l9 27 27 9-27 9-9 27-9-27-27-9 27-9z' fill='%23c9a24b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ee;
+  --bg2:#f3ecdc;
+  --card:#fffdf7;
+  --ink:#1f2b29;
+  --muted:#5c6a66;
+  --green:#0b4f43;
+  --green2:#0e6353;
+  --green-deep:#072e27;
+  --terra:#c0522c;
+  --terra2:#a9431f;
+  --gold:#c9a24b;
+  --line:rgba(31,43,41,.14);
+  --shadow:0 18px 44px rgba(31,43,41,.10);
+  --radius:18px;
+  --font-d:'Fraunces',Georgia,'Times New Roman',serif;
+  --font-b:'Inter',ui-sans-serif,system-ui,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-b);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+html[lang="ar"] body{font-family:'Tajawal',var(--font-b)}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .logo{font-family:'Tajawal',sans-serif;letter-spacing:0}
+::selection{background:rgba(192,82,44,.28)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.container{width:min(1120px,92%);margin-inline:auto}
+section{padding:96px 0;scroll-margin-top:76px}
+h1{font-family:var(--font-d);font-weight:700;font-size:clamp(2.1rem,5.4vw,3.55rem);line-height:1.12;letter-spacing:-.01em}
+h2{font-family:var(--font-d);font-weight:700;font-size:clamp(1.75rem,3.8vw,2.6rem);line-height:1.15;letter-spacing:-.01em}
+h3{font-family:var(--font-d);font-size:1.22rem}
+.accent{color:var(--terra)}
+
+/* ---------- NAV ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:100;transition:.3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(250,246,238,.9);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:700;font-size:1.22rem;color:var(--green)}
+.logo svg{flex:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color .25s}
+.nav-links a:hover{color:var(--green)}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card);direction:ltr}
+.lang-toggle button{border:0;background:transparent;padding:6px 13px;font-size:.82rem;font-weight:700;color:var(--muted);transition:.25s}
+.lang-toggle button.active{background:var(--green);color:#faf6ee}
+.burger{display:none;background:none;border:0;width:42px;height:42px;position:relative;flex:none}
+.burger span{position:absolute;left:9px;right:9px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:12px;border:0;font-weight:600;font-size:.95rem;background:var(--green);color:#faf6ee;transition:.28s;box-shadow:0 10px 24px rgba(11,79,67,.22)}
+.btn:hover{background:var(--green2);transform:translateY(-2px);box-shadow:0 14px 30px rgba(11,79,67,.3)}
+.btn svg{width:17px;height:17px}
+[dir="rtl"] .btn svg.flip{transform:scaleX(-1)}
+.btn-terra{background:var(--terra);box-shadow:0 10px 24px rgba(192,82,44,.24)}
+.btn-terra:hover{background:var(--terra2);box-shadow:0 14px 30px rgba(192,82,44,.32)}
+.btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--green);box-shadow:none}
+.btn-ghost:hover{background:rgba(11,79,67,.07);box-shadow:none}
+.btn-wa{background:#1faa55;box-shadow:0 10px 24px rgba(31,170,85,.26)}
+.btn-wa:hover{background:#178a46;box-shadow:0 14px 30px rgba(31,170,85,.34)}
+.btn-sm{padding:10px 20px;font-size:.88rem}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:150px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%230b4f43' stroke-opacity='0.05'%3E%3Cpath d='M42 8l9 25 25 9-25 9-9 25-9-25-25-9 25-9z'/%3E%3Ccircle cx='42' cy='42' r='7'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero::after{content:"";position:absolute;top:-180px;inset-inline-end:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.16),transparent 65%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);background:var(--card)}
+html[lang="ar"] .badge{letter-spacing:.02em;text-transform:none}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(192,82,44,.18);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(192,82,44,.18)}50%{box-shadow:0 0 0 8px rgba(192,82,44,.06)}}
+.hero h1{margin:24px 0 20px}
+.hero .sub{color:var(--muted);font-size:clamp(1rem,1.5vw,1.14rem);max-width:52ch;font-weight:400}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-note{margin-top:20px;font-size:.86rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.hero-note svg{width:15px;height:15px;color:var(--green2);flex:none}
+.hero-chips{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.chip{font-size:.78rem;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
+
+/* hero mockup */
+.mockup{position:relative}
+.browser{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;transform:rotate(1.2deg);transition:transform .5s}
+.mockup:hover .browser{transform:rotate(0)}
+.browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--bg2)}
+.browser-bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.browser-bar i:first-child{background:var(--terra)}
+.browser-url{margin-inline-start:10px;flex:1;font-size:.7rem;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:3px 10px;direction:ltr;text-align:start}
+.mock-hero{position:relative;padding:34px 26px 30px;background:linear-gradient(150deg,var(--terra) 0%,#d97a4a 55%,var(--gold) 130%);color:#fff7ec;overflow:hidden}
+.mock-arch{position:absolute;top:0;inset-inline-end:18px;width:130px;height:170px;background:rgba(255,247,236,.16);border:1.5px solid rgba(255,247,236,.35);border-radius:70px 70px 0 0}
+.mock-arch::after{content:"";position:absolute;inset:10px;border:1.5px solid rgba(255,247,236,.3);border-radius:60px 60px 0 0}
+.mock-kicker{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.9}
+html[lang="ar"] .mock-kicker{letter-spacing:.02em;text-transform:none}
+.mock-title{font-family:var(--font-d);font-size:1.35rem;font-weight:700;margin:8px 0 6px;max-width:70%}
+.mock-line{height:7px;border-radius:5px;background:rgba(255,247,236,.55);width:52%}
+.mock-line.w2{width:38%;margin-top:7px}
+.mock-book{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.mock-pill{background:rgba(255,247,236,.95);color:var(--ink);font-size:.62rem;font-weight:600;padding:7px 13px;border-radius:999px}
+.mock-btn{background:var(--green);color:#faf6ee;font-size:.62rem;font-weight:700;padding:7px 15px;border-radius:999px}
+.mock-body{padding:20px 22px 24px;display:grid;gap:12px}
+.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mock-card{height:64px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);position:relative;overflow:hidden}
+.mock-card::before{content:"";position:absolute;top:0;left:0;right:0;height:26px;background:linear-gradient(150deg,rgba(11,79,67,.16),rgba(201,162,75,.22))}
+.mock-card::after{content:"";position:absolute;top:36px;left:9px;right:9px;height:6px;border-radius:4px;background:var(--line)}
+.mock-lang{position:absolute;top:14px;inset-inline-start:16px;z-index:3;font-size:.6rem;font-weight:700;background:rgba(7,46,39,.75);color:#faf6ee;padding:4px 10px;border-radius:999px;direction:ltr}
+
+/* ---------- SECTIONS COMMON ---------- */
+.sec-label{display:flex;align-items:center;gap:12px;font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
+html[lang="ar"] .sec-label{letter-spacing:.03em;text-transform:none}
+.sec-label::before{content:"";width:26px;height:2px;background:var(--terra);border-radius:2px}
+.sec-sub{color:var(--muted);max-width:62ch;margin-top:16px;font-weight:400}
+.sec-head.center{text-align:center}
+.sec-head.center .sec-label{justify-content:center}
+.sec-head.center .sec-sub{margin-inline:auto}
+
+/* ---------- OFFER ---------- */
+.offer{background:var(--bg2)}
+.offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:48px}
+.offer-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.3s}
+.offer-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(201,162,75,.5)}
+.offer-card .icon-tile{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(11,79,67,.12),rgba(201,162,75,.16));color:var(--green);margin-bottom:16px}
+.offer-card .icon-tile svg{width:22px;height:22px}
+.offer-card h3{font-size:1.1rem;margin-bottom:8px}
+.offer-card p{color:var(--muted);font-size:.92rem;font-weight:400}
+
+/* ---------- SERVICES ---------- */
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:48px}
+.serv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:12px;transition:.3s;position:relative}
+.serv:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.serv.featured{border-color:var(--green);box-shadow:0 0 0 1px var(--green),var(--shadow)}
+.serv .flag{position:absolute;top:-12px;inset-inline-start:22px;background:var(--terra);color:#fff;font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+html[lang="ar"] .serv .flag{letter-spacing:0;text-transform:none}
+.serv h3{font-size:1.18rem}
+.serv p{color:var(--muted);font-size:.92rem;flex:1}
+.serv .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed var(--line);padding-top:14px;font-size:.84rem}
+.serv .meta .d{color:var(--muted);display:flex;align-items:center;gap:6px}
+.serv .meta .d svg{width:14px;height:14px;color:var(--gold)}
+.serv .price{font-weight:700;color:var(--green)}
+.serv .price small{display:block;font-size:.66rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+html[lang="ar"] .serv .price small{letter-spacing:0;text-transform:none}
+
+/* ---------- PROCESS ---------- */
+.process{background:var(--bg2)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:48px;counter-reset:step}
+.proc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;position:relative;transition:.3s}
+.proc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.proc .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-d);font-weight:700;font-size:1.15rem;color:var(--gold);border:1.5px solid var(--gold);margin-bottom:16px;background:var(--bg)}
+.proc h3{font-size:1.08rem;margin-bottom:8px}
+.proc p{color:var(--muted);font-size:.9rem}
+
+/* ---------- GALLERY ---------- */
+.gal-banner{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(135deg,rgba(192,82,44,.1),rgba(201,162,75,.14));border:1px solid rgba(192,82,44,.4);border-radius:var(--radius);padding:20px 22px;margin:44px 0 30px}
+.gal-banner svg{width:26px;height:26px;flex:none;color:var(--terra);margin-top:2px}
+.gal-banner b{display:block;color:var(--terra2);font-size:.98rem;margin-bottom:3px}
+.gal-banner p{color:var(--muted);font-size:.88rem}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}
+.gal-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.gal-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.gal-tag{position:absolute;top:12px;inset-inline-start:12px;z-index:2;background:rgba(192,82,44,.94);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:999px}
+html[lang="ar"] .gal-tag{letter-spacing:0;text-transform:none}
+.shot{position:relative;border-bottom:1px solid var(--line)}
+.shot-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--bg2);border-bottom:1px solid var(--line)}
+.shot-bar i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.shot-bar i:first-child{background:var(--terra)}
+/* ---- live mini-site demos ---- */
+.shot-stage{display:flex;gap:10px;align-items:stretch;padding:12px;background:linear-gradient(180deg,#fffdf7,var(--bg))}
+.mini{flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 4px 14px rgba(31,43,41,.08)}
+.m-phone{width:54px;flex:none;align-self:center;background:#fff;border:2.5px solid #2a3a37;border-radius:10px;padding:4px 3px;box-shadow:0 5px 16px rgba(31,43,41,.14);position:relative}
+.m-phone::before{content:"";position:absolute;top:2px;left:50%;transform:translateX(-50%);width:16px;height:3px;border-radius:2px;background:#2a3a37}
+.m-phone .mini{border:0;border-radius:5px;box-shadow:none}
+.m-nav{display:flex;align-items:center;gap:5px;padding:6px 8px;border-bottom:1px solid var(--line)}
+.m-logo{width:10px;height:10px;border-radius:3px;background:var(--t1,#0b4f43);flex:none}
+.m-name{height:5px;width:34px;border-radius:3px;background:#33413d;opacity:.7}
+.m-links{display:flex;gap:4px;margin-inline-start:auto}
+.m-links i{width:12px;height:4px;border-radius:2px;background:#ddd7c8}
+.m-cta{height:10px;padding:0 7px;border-radius:99px;background:var(--t2,#c0522c);display:flex;align-items:center;flex:none}
+.m-cta i{width:8px;height:3px;border-radius:2px;background:rgba(255,255,255,.85)}
+.m-hero{position:relative;padding:14px 10px 13px;background:linear-gradient(135deg,var(--t1),var(--t2));overflow:hidden}
+.m-arch{position:absolute;top:0;inset-inline-end:14px;width:46px;height:64px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);border-radius:25px 25px 0 0}
+.m-arch::after{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.3);border-radius:21px 21px 0 0}
+.m-kick{height:4px;width:42px;border-radius:2px;background:rgba(255,255,255,.55);margin-bottom:7px}
+.m-title{height:8px;width:64%;border-radius:3px;background:rgba(255,255,255,.92);margin-bottom:5px}
+.m-title2{height:8px;width:46%;border-radius:3px;background:rgba(255,255,255,.92);margin-bottom:9px}
+.m-btns{display:flex;gap:5px}
+.m-btn{height:12px;padding:0 9px;border-radius:99px;background:var(--t3,#c9a24b);display:flex;align-items:center;flex:none}
+.m-btn i{width:10px;height:3px;border-radius:2px;background:rgba(255,255,255,.9)}
+.m-btn.ghost{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5)}
+.m-sec{padding:9px 8px;display:grid;gap:8px}
+.m-sec-title{height:6px;width:36%;border-radius:3px;background:#33413d;opacity:.65}
+.m-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.m-feat{border:1px solid var(--line);border-radius:6px;padding:6px 5px;background:var(--card)}
+.m-feat .ic{width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--t1),var(--t3));margin-bottom:5px}
+.m-feat b{display:block;height:4px;border-radius:2px;background:#a8b0aa;margin-bottom:3px}
+.m-feat b.w2{width:68%}
+.m-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.m-photo{height:42px;border-radius:6px;position:relative;overflow:hidden}
+.m-photo::after{content:"";position:absolute;top:0;inset-inline-end:7px;width:15px;height:26px;background:rgba(255,255,255,.28);border-radius:9px 9px 0 0}
+.ph1{background:linear-gradient(150deg,#c0522c,#d98a4a)}
+.ph2{background:linear-gradient(150deg,#0b4f43,#0e6353)}
+.ph3{background:linear-gradient(150deg,#c9a24b,#e0bc6d)}
+.m-book{display:flex;gap:5px;align-items:center;padding:8px;background:var(--card);border-block:1px solid var(--line)}
+.m-pill{height:12px;flex:1;border-radius:99px;background:#f1ecdf;border:1px solid var(--line)}
+.m-book .m-btn{height:14px}
+.m-room{display:flex;gap:6px;align-items:center}
+.m-room .ph{width:36px;height:31px;flex:none;border-radius:5px}
+.m-room .tx{flex:1;min-width:0}
+.m-room .tx b{display:block;height:5px;border-radius:2px;background:#a8b0aa;margin-bottom:3px}
+.m-room .tx b.w2{width:58%}
+.m-room .pr{width:22px;height:8px;border-radius:3px;background:var(--t3);flex:none}
+.m-strip{padding:8px;display:flex;gap:5px}
+.m-strip i{height:15px;flex:1;border-radius:4px;background:#f1ecdf;border:1px solid var(--line)}
+.m-banner{margin:0 8px 8px;padding:10px 8px;border-radius:7px;background:linear-gradient(135deg,var(--t1),var(--t2));text-align:center}
+.m-banner b{display:block;height:6px;width:46%;margin:0 auto 5px;border-radius:3px;background:rgba(255,255,255,.92)}
+.m-banner i{display:block;height:4px;width:32%;margin:0 auto;border-radius:2px;background:rgba(255,255,255,.6)}
+.m-cols{display:grid;grid-template-columns:1fr 1fr;gap:7px;align-items:center;padding:0 8px 8px}
+.m-cols .ph{height:58px;border-radius:6px}
+.m-cols .tx b{display:block;height:5px;border-radius:2px;background:#a8b0aa;margin-bottom:4px}
+.m-cols .tx b.w2{width:78%}
+.m-cols .tx b.w3{width:56%}
+.m-foot{height:17px;background:#22302c;display:flex;align-items:center;gap:5px;padding:0 9px}
+.m-foot i{width:15px;height:4px;border-radius:2px;background:rgba(255,255,255,.35)}
+.m-hero.big{padding:24px 10px;text-align:center}
+.m-hero.big .m-arch{inset-inline-end:auto;inset-inline-start:50%;transform:translateX(-50%);width:64px;height:92px}
+.m-hero.big .m-kick{margin-inline:auto}
+.m-hero.big .m-title,.m-hero.big .m-title2{margin-inline:auto}
+.m-hero.big .m-btns{justify-content:center}
+/* phone compression */
+.m-phone .m-nav{padding:4px}
+.m-phone .m-name,.m-phone .m-links{display:none}
+.m-phone .m-hero{padding:10px 6px 9px}
+.m-phone .m-arch{width:22px;height:32px;inset-inline-end:7px;border-radius:12px 12px 0 0}
+.m-phone .m-kick{width:24px;margin-bottom:4px}
+.m-phone .m-title{height:5px;margin-bottom:3px}
+.m-phone .m-title2{height:5px;width:56%;margin-bottom:5px}
+.m-phone .m-btns{flex-direction:column;gap:3px}
+.m-phone .m-btn{height:9px;width:70%}
+.m-phone .m-feats{grid-template-columns:1fr}
+.m-phone .m-feat{display:flex;align-items:center;gap:4px;padding:4px}
+.m-phone .m-feat .ic{width:9px;height:9px;margin-bottom:0}
+.m-phone .m-feat b{margin-bottom:0}
+.m-phone .m-photos{grid-template-columns:1fr}
+.m-phone .m-photo{height:24px}
+.m-phone .m-book{padding:5px 4px}
+.m-phone .m-pill{height:8px}
+.m-phone .m-book .m-btn{display:none}
+.m-phone .m-room .ph{width:22px;height:20px}
+.m-phone .m-room .tx b{height:4px}
+.m-phone .m-room .pr{width:12px;height:6px}
+.m-phone .m-strip{padding:5px 4px}
+.m-phone .m-strip i{height:10px}
+.m-phone .m-cols{grid-template-columns:1fr;padding:0 4px 5px}
+.m-phone .m-cols .ph{height:30px}
+.m-phone .m-banner{margin:0 4px 5px;padding:6px 4px}
+.m-phone .m-foot{height:12px;padding:0 5px}
+.gal-info{padding:18px 20px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
+.gal-info h3{font-size:1.05rem}
+.gal-info p{color:var(--muted);font-size:.84rem;flex:1}
+.gal-cta{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:.84rem;font-weight:700;color:var(--terra)}
+.gal-cta svg{width:14px;height:14px}
+[dir="rtl"] .gal-cta svg{transform:scaleX(-1)}
+
+/* ---------- PRICING ---------- */
+.pricing{background:var(--bg2)}
+.price-card{max-width:600px;margin:48px auto 0;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:44px 40px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--green),var(--gold),var(--terra))}
+.price-from{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html[lang="ar"] .price-from{letter-spacing:.02em;text-transform:none}
+.price-value{font-family:var(--font-d);font-size:clamp(3rem,7vw,4.2rem);font-weight:700;color:var(--green);line-height:1.1;margin:10px 0 4px}
+.price-value .cur{font-size:.35em;color:var(--terra);font-family:var(--font-b);font-weight:700}
+.price-note{color:var(--muted);font-size:.9rem;max-width:44ch;margin:6px auto 0}
+.price-inc{margin-top:24px;padding-top:22px;border-top:1px dashed var(--line);font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center}
+.price-inc span{display:inline-flex;align-items:center;gap:7px}
+.price-inc svg{width:14px;height:14px;color:var(--green2)}
+.price-card .btn{margin-top:30px}
+
+/* ---------- FAQ ---------- */
+.acc{max-width:760px;margin:40px auto 0}
+.acc-item{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.acc-item:hover{border-color:rgba(201,162,75,.55)}
+.acc-item.open{border-color:var(--green)}
+.acc-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:0;text-align:start;padding:19px 22px;font-size:1rem;font-weight:600;color:var(--ink)}
+.acc-btn .pm{width:28px;height:28px;flex:none;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--terra);font-size:1.15rem;line-height:1;transition:.35s}
+.acc-item.open .pm{transform:rotate(45deg);background:var(--terra);border-color:var(--terra);color:#fff}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.2,.7,.2,1)}
+.acc-panel p{padding:0 22px 20px;color:var(--muted);font-size:.93rem}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--green-deep);color:#f2efe6;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23faf6ee' stroke-opacity='0.04'%3E%3Cpath d='M42 8l9 25 25 9-25 9-9 25-9-25-25-9 25-9z'/%3E%3C/g%3E%3C/svg%3E")}
+.contact .container{position:relative}
+.contact .sec-label{color:var(--gold)}
+.contact .sec-label::before{background:var(--gold)}
+.contact h2{color:#faf6ee}
+.contact .sub{color:rgba(242,239,230,.72)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;margin-top:44px;align-items:start}
+.contact-methods{display:grid;gap:14px}
+.cmethod{display:flex;align-items:center;gap:16px;background:rgba(250,246,238,.06);border:1px solid rgba(250,246,238,.16);border-radius:16px;padding:18px 20px;transition:.3s}
+.cmethod:hover{background:rgba(250,246,238,.11);transform:translateY(-2px)}
+.cmethod .icon-tile{width:46px;height:46px;flex:none;border-radius:13px;display:grid;place-items:center;background:rgba(201,162,75,.16);color:var(--gold)}
+.cmethod .icon-tile svg{width:21px;height:21px}
+.cmethod b{display:block;font-size:.98rem}
+.cmethod span{font-size:.82rem;color:rgba(242,239,230,.6)}
+.form-card{background:var(--card);color:var(--ink);border-radius:20px;padding:32px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.form-card h3{font-size:1.25rem;margin-bottom:4px}
+.form-card>p{color:var(--muted);font-size:.86rem;margin-bottom:22px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f-group{margin-bottom:14px}
+.f-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.f-group input,.f-group select,.f-group textarea{width:100%;font-family:inherit;font-size:.92rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px 14px;transition:border-color .25s,box-shadow .25s}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(11,79,67,.13)}
+.f-group textarea{resize:vertical;min-height:96px}
+.form-actions{display:grid;gap:10px;margin-top:6px}
+.form-note{font-size:.76rem;color:var(--muted);text-align:center;margin-top:14px}
+.form-alert{display:none;background:rgba(192,82,44,.1);border:1px solid rgba(192,82,44,.5);color:var(--terra2);border-radius:11px;padding:11px 14px;font-size:.82rem;margin-bottom:14px}
+.form-alert.show{display:block}
+
+/* ---------- FOOTER ---------- */
+footer{background:#051f1a;color:rgba(242,239,230,.72);padding:56px 0 34px}
+.foot-grid{display:flex;justify-content:space-between;gap:36px;flex-wrap:wrap}
+.foot-grid .logo{color:#faf6ee}
+.foot-grid p{font-size:.86rem;max-width:40ch;margin-top:12px}
+.foot-links h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
+.foot-links a{display:block;font-size:.88rem;padding:4px 0;transition:color .25s}
+.foot-links a:hover{color:var(--gold)}
+.foot-base{margin-top:40px;padding-top:22px;border-top:1px solid rgba(250,246,238,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem}
+.foot-demo{display:inline-flex;align-items:center;gap:7px}
+.foot-demo svg{width:13px;height:13px;color:var(--gold)}
+
+/* ---------- FLOATING WA ---------- */
+.wa-float{position:fixed;bottom:22px;inset-inline-end:22px;z-index:95;width:56px;height:56px;border-radius:50%;background:#1faa55;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(31,170,85,.4);transition:.3s;border:0}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:27px;height:27px}
+.wa-float::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(31,170,85,.5);animation:ring 2.4s infinite}
+@keyframes ring{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.25);opacity:0}}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease var(--d,0s),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.rv.visible{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .mockup{max-width:520px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:820px){
+  .nav-links{position:fixed;top:66px;inset-inline:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(250,246,238,.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:8px 5% 20px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s}
+  .nav-links.open{max-height:400px}
+  .nav-links a{padding:13px 6px;font-size:1rem;border-bottom:1px solid rgba(31,43,41,.07)}
+  .burger{display:block}
+  .nav-right .btn{display:none}
+  section{padding:72px 0}
+  .hero{padding:126px 0 70px}
+  .f-row{grid-template-columns:1fr}
+  .price-card{padding:36px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header id="header">
+  <div class="container nav-inner">
+    <a class="logo" href="#top" aria-label="Accueil / الرئيسية">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0b4f43"/><path d="M50 14l9 27 27 9-27 9-9 27-9-27-27-9 27-9z" fill="#c9a24b"/></svg>
+      <span data-i18n="brand">{{AGENCY_NAME}}</span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+        <a href="#process" data-i18n="nav.process">Processus</a>
+        <a href="#pricing" data-i18n="nav.pricing">Tarifs</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Langue / اللغة">
+        <button id="btnFr" type="button" class="active">FR</button>
+        <button id="btnAr" type="button">عربية</button>
+      </div>
+      <a href="#contact" class="btn btn-sm" data-i18n="nav.cta">Devis gratuit</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge rv"><i></i><span data-i18n="hero.badge">Sites web pour riads &amp; petits hôtels · Maroc</span></span>
+      <h1 class="rv" style="--d:.06s"><span data-i18n="hero.h1a">Un site web à votre image,</span><br><span class="accent" data-i18n="hero.h1b">pour accueillir vos clients en ligne.</span></h1>
+      <p class="sub rv" style="--d:.12s" data-i18n="hero.sub">Design élégant, 100&nbsp;% mobile, page de réservation et contacts clairs — livré en 2 à 3 semaines, sans engagement.</p>
+      <div class="hero-cta rv" style="--d:.18s">
+        <a href="#contact" class="btn btn-terra">
+          <span data-i18n="hero.cta1">Demander un devis gratuit</span>
+          <svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#gallery" class="btn btn-ghost"><span data-i18n="hero.cta2">Voir les exemples</span></a>
+      </div>
+      <p class="hero-note rv" style="--d:.24s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+        <span data-i18n="hero.note">Devis gratuit et sans engagement.</span>
+      </p>
+      <div class="hero-chips rv" style="--d:.3s">
+        <span class="chip" data-i18n="hero.chip1">Design sur mesure</span>
+        <span class="chip" data-i18n="hero.chip2">100&nbsp;% mobile</span>
+        <span class="chip" data-i18n="hero.chip3">Français &amp; arabe</span>
+      </div>
+    </div>
+    <div class="mockup rv" style="--d:.15s" aria-hidden="true">
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">votre-riad.ma</span></div>
+        <div class="mock-hero">
+          <span class="mock-lang">FR &nbsp;|&nbsp; ع</span>
+          <div class="mock-arch"></div>
+          <div class="mock-kicker" data-i18n="hero.mock_k">Riad &amp; Spa · Marrakech</div>
+          <div class="mock-title" data-i18n="hero.mock_t">Bienvenue chez vous</div>
+          <div class="mock-line"></div>
+          <div class="mock-line w2"></div>
+          <div class="mock-book">
+            <span class="mock-pill" data-i18n="hero.mock_p1">Arrivée</span>
+            <span class="mock-pill" data-i18n="hero.mock_p2">Départ</span>
+            <span class="mock-btn" data-i18n="hero.mock_b">Réserver</span>
+          </div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-cards"><div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div></div>
+          <div class="mock-line w80"></div>
+          <div class="mock-line w60"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFER ================= -->
+<section class="offer" id="offer">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label" data-i18n="offer.label">L'offre</div>
+      <h2 data-i18n="offer.h2">Je crée des sites web sur mesure pour votre établissement</h2>
+      <p class="sec-sub" data-i18n="offer.sub">Que vous soyez un riad familial, une maison d'hôtes ou un petit hôtel : un site clair, rapide et beau, qui présente vos chambres, vos tarifs et vos coordonnées.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card rv">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7a4.95 4.95 0 0 0-7-7l-7 7a4.95 4.95 0 0 0 7 7Z"/><path d="M9 8l7 7M5 19l3.5-3.5"/></svg></div>
+        <h3 data-i18n="offer.p1t">Design sur mesure</h3>
+        <p data-i18n="offer.p1d">Un style unique qui reflète l'atmosphère et les couleurs de votre riad.</p>
+      </div>
+      <div class="offer-card rv" style="--d:.07s">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <h3 data-i18n="offer.p2t">100&nbsp;% mobile</h3>
+        <p data-i18n="offer.p2d">Vos clients consultent votre site depuis leur téléphone, partout.</p>
+      </div>
+      <div class="offer-card rv" style="--d:.14s">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 15h4"/></svg></div>
+        <h3 data-i18n="offer.p3t">Réservation &amp; contacts</h3>
+        <p data-i18n="offer.p3d">Formulaire de demande de réservation et liens vers vos plateformes.</p>
+      </div>
+      <div class="offer-card rv" style="--d:.21s">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3 data-i18n="offer.p4t">Rapide à lancer</h3>
+        <p data-i18n="offer.p4d">De l'idée à la livraison en 2 à 3 semaines en moyenne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label" data-i18n="serv.label">Services</div>
+      <h2 data-i18n="serv.h2">Des formules adaptées à chaque établissement</h2>
+      <p class="sec-sub" data-i18n="serv.sub">Chaque prestation inclut un design sur mesure, l'adaptation mobile et la livraison de tous vos accès.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv featured rv">
+        <span class="flag" data-i18n="serv.flag1">Le plus demandé</span>
+        <h3 data-i18n="serv.s1t">Site vitrine</h3>
+        <p data-i18n="serv.s1d">Présentez votre établissement : galerie photos, description, tarifs et coordonnées.</p>
+        <div class="meta">
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s1dl">Délai : ~1 semaine</span></span>
+          <span class="price"><small data-i18n="serv.from">À partir de</small> <span data-i18n="price.amount">{{BASE_PRICE}}</span> <span data-i18n="price.currency">MAD</span></span>
+        </div>
+      </div>
+      <div class="serv rv" style="--d:.07s">
+        <h3 data-i18n="serv.s2t">Site avec réservation</h3>
+        <p data-i18n="serv.s2d">Ajoutez un formulaire de demande de réservation et des liens vers Booking, Airbnb ou WhatsApp.</p>
+        <div class="meta">
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s2dl">Délai : ~2 semaines</span></span>
+          <span class="price"><small>&nbsp;</small><span data-i18n="serv.surdevis">Sur devis</span></span>
+        </div>
+      </div>
+      <div class="serv rv" style="--d:.14s">
+        <h3 data-i18n="serv.s3t">One-page premium</h3>
+        <p data-i18n="serv.s3d">Une page unique et immersive pour séduire dès le premier scroll.</p>
+        <div class="meta">
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s3dl">Délai : ~1 semaine</span></span>
+          <span class="price"><small>&nbsp;</small><span data-i18n="serv.surdevis">Sur devis</span></span>
+        </div>
+      </div>
+      <div class="serv rv" style="--d:.21s">
+        <h3 data-i18n="serv.s4t">Refonte &amp; mise à jour</h3>
+        <p data-i18n="serv.s4d">Modernisez un site existant ou mettez à jour vos contenus en français et en arabe.</p>
+        <div class="meta">
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s4dl">Délai : sur devis</span></span>
+          <span class="price"><small>&nbsp;</small><span data-i18n="serv.surdevis">Sur devis</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label" data-i18n="proc.label">Processus</div>
+      <h2 data-i18n="proc.h2">De votre idée à votre site, en 4 étapes</h2>
+      <p class="sec-sub" data-i18n="proc.sub">Une méthode simple et claire, sans surprise.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc rv"><div class="n">1</div><h3 data-i18n="proc.s1t">Contact</h3><p data-i18n="proc.s1d">Écrivez-moi via WhatsApp ou email avec vos envies.</p></div>
+      <div class="proc rv" style="--d:.07s"><div class="n">2</div><h3 data-i18n="proc.s2t">Devis gratuit</h3><p data-i18n="proc.s2d">Vous recevez une proposition claire, sans engagement.</p></div>
+      <div class="proc rv" style="--d:.14s"><div class="n">3</div><h3 data-i18n="proc.s3t">Design &amp; validation</h3><p data-i18n="proc.s3d">Je crée le design, vous validez chaque étape.</p></div>
+      <div class="proc rv" style="--d:.21s"><div class="n">4</div><h3 data-i18n="proc.s4t">Livraison</h3><p data-i18n="proc.s4d">Votre site est en ligne, avec tous vos accès.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label" data-i18n="gal.label">Galerie</div>
+      <h2 data-i18n="gal.h2">Exemples de sites</h2>
+      <p class="sec-sub" data-i18n="gal.sub">Le style et les possibilités, présentés en avant-première.</p>
+    </div>
+    <div class="gal-banner rv" role="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4.5M12 17.3v.2"/></svg>
+      <div>
+        <b data-i18n="gal.banner_t">Aperçu de ce que vous obtenez</b>
+        <p data-i18n="gal.banner_d">Ces aperçus montrent le niveau de design, de détail et d'adaptation mobile que vous obtenez — chaque site est conçu sur mesure pour votre établissement, jamais un template.</p>
+      </div>
+    </div>
+    <div class="gal-grid">
+      <article class="gal-card g1 rv">
+        <div class="shot">
+          <span class="gal-tag" data-i18n="gal.tag">Démo</span>
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-stage" data-demo="g1" aria-hidden="true"></div>
+        </div>
+        <div class="gal-info">
+          <h3 data-i18n="gal.d1t">Riad — site vitrine</h3>
+          <p data-i18n="gal.d1s">Pages : accueil, galerie, contact</p>
+          <a href="#contact" class="gal-cta"><span data-i18n="gal.cta">Je veux un site comme ceci</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="gal-card g2 rv" style="--d:.07s">
+        <div class="shot">
+          <span class="gal-tag" data-i18n="gal.tag">Démo</span>
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-stage" data-demo="g2" aria-hidden="true"></div>
+        </div>
+        <div class="gal-info">
+          <h3 data-i18n="gal.d2t">Hôtel — page réservation</h3>
+          <p data-i18n="gal.d2s">Pages : accueil, chambres, réservation</p>
+          <a href="#contact" class="gal-cta"><span data-i18n="gal.cta">Je veux un site comme ceci</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="gal-card g3 rv" style="--d:.14s">
+        <div class="shot">
+          <span class="gal-tag" data-i18n="gal.tag">Démo</span>
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-stage" data-demo="g3" aria-hidden="true"></div>
+        </div>
+        <div class="gal-info">
+          <h3 data-i18n="gal.d3t">Riad — one page</h3>
+          <p data-i18n="gal.d3s">Page unique immersive</p>
+          <a href="#contact" class="gal-cta"><span data-i18n="gal.cta">Je veux un site comme ceci</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="gal-card g4 rv" style="--d:.21s">
+        <div class="shot">
+          <span class="gal-tag" data-i18n="gal.tag">Démo</span>
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-stage" data-demo="g4" aria-hidden="true"></div>
+        </div>
+        <div class="gal-info">
+          <h3 data-i18n="gal.d4t">Maison d'hôtes — pages multiples</h3>
+          <p data-i18n="gal.d4s">Pages : accueil, chambres, tarifs, contact</p>
+          <a href="#contact" class="gal-cta"><span data-i18n="gal.cta">Je veux un site comme ceci</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="sec-head center rv">
+      <div class="sec-label" data-i18n="price.label">Tarifs</div>
+      <h2 data-i18n="price.h2">Un point de départ clair</h2>
+      <p class="sec-sub" data-i18n="price.sub">Un prix transparent pour bien démarrer — le devis final est toujours gratuit et sans engagement.</p>
+    </div>
+    <div class="price-card rv">
+      <div class="price-from" data-i18n="price.from">Site vitrine · à partir de</div>
+      <div class="price-value"><span data-i18n="price.amount">{{BASE_PRICE}}</span>&nbsp;<span class="cur" data-i18n="price.currency">MAD</span></div>
+      <p class="price-note" data-i18n="price.note">Le prix exact dépend de votre projet et de vos exigences : nombre de pages, réservation en ligne, contenus à intégrer — il peut être plus élevé selon les options choisies.</p>
+      <div class="price-inc">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><i data-i18n="price.inc1" style="font-style:normal">Design sur mesure</i></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><i data-i18n="price.inc2" style="font-style:normal">Adaptation mobile</i></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><i data-i18n="price.inc3" style="font-style:normal">Formulaire de contact</i></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><i data-i18n="price.inc4" style="font-style:normal">Livraison des accès</i></span>
+      </div>
+      <a href="#contact" class="btn btn-terra">
+        <span data-i18n="price.cta">Demander mon devis</span>
+        <svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head center rv">
+      <div class="sec-label" data-i18n="faq.label">FAQ</div>
+      <h2 data-i18n="faq.h2">Questions fréquentes</h2>
+    </div>
+    <div class="acc rv">
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q1">Combien coûte un site web ?</span><span class="pm">+</span></button>
+        <div class="acc-panel"><p><span data-i18n="faq.a1a">Les sites vitrines commencent à {{BASE_PRICE}} MAD. Le prix final dépend de vos choix : je vous envoie un devis détaillé et gratuit avant tout travail.</span></p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q2">Quels sont les délais de livraison ?</span><span class="pm">+</span></button>
+        <div class="acc-panel"><p data-i18n="faq.a2">En moyenne 2 à 3 semaines : une semaine pour le design, puis corrections et mise en ligne. Les sites vitrines simples peuvent être livrés en ~1 semaine.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q3">Puis-je ajouter la réservation en ligne ?</span><span class="pm">+</span></button>
+        <div class="acc-panel"><p data-i18n="faq.a3">Oui : formulaire de demande de réservation, ou liens vers vos comptes Booking, Airbnb ou WhatsApp, selon vos besoins.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q4">Mon site sera-t-il visible sur mobile ?</span><span class="pm">+</span></button>
+        <div class="acc-panel"><p data-i18n="faq.a4">Oui, chaque site est conçu d'abord pour mobile, puis adapté aux tablettes et aux ordinateurs.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q5">Et l'hébergement et le nom de domaine ?</span><span class="pm">+</span></button>
+        <div class="acc-panel"><p data-i18n="faq.a5">Je vous conseille les options adaptées à votre budget et vous accompagne dans la mise en route. Les frais d'hébergement et de domaine sont séparés et facturés par le prestataire.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-label" data-i18n="contact.label">Contact</div>
+      <h2 data-i18n="contact.h2">Demandez votre devis gratuit</h2>
+      <p class="sec-sub" data-i18n="contact.sub">Parlez-moi de votre établissement : je vous réponds rapidement avec une proposition et un prix, sans engagement.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-methods rv">
+        <a class="cmethod wa-link" href="#" target="_blank" rel="noopener">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-2.9-.4-4.1-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.6 8.4c.4 2.9 2.7 5.2 5.6 5.6l1-1.5-2.1-1.2-1 .9c-.9-.7-1.6-1.4-2.3-2.3l.9-1-1.2-2.1-1.5 1Z"/></svg></div>
+          <div><b data-i18n="contact.wa">WhatsApp</b><span data-i18n="contact.wa_s">Réponse rapide, 7j/7</span></div>
+        </a>
+        <a class="cmethod email-link" href="#" target="_blank" rel="noopener">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></div>
+          <div><b data-i18n="contact.email">Email</b><span data-i18n="contact.email_s">Pour les demandes détaillées</span></div>
+        </a>
+        <div class="cmethod">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div><b data-i18n="contact.loc">Maroc</b><span data-i18n="contact.loc_s">Clients sur tout le territoire</span></div>
+        </div>
+      </div>
+      <form class="form-card rv" id="quoteForm" style="--d:.1s" novalidate>
+        <h3 data-i18n="form.title">Demande de devis</h3>
+        <p data-i18n="form.sub">Remplissez ce formulaire : il ouvre WhatsApp avec votre message pré-rempli.</p>
+        <div class="form-alert" id="formAlert"></div>
+        <div class="f-row">
+          <div class="f-group">
+            <label for="fName" data-i18n="form.name">Votre nom *</label>
+            <input id="fName" type="text" required data-i18n-ph="form.name_ph" placeholder="Ex. Karim Benali">
+          </div>
+          <div class="f-group">
+            <label for="fBiz" data-i18n="form.business">Nom de l'établissement</label>
+            <input id="fBiz" type="text" data-i18n-ph="form.business_ph" placeholder="Ex. Riad des Oliviers">
+          </div>
+        </div>
+        <div class="f-group">
+          <label for="fType" data-i18n="form.type">Type d'établissement</label>
+          <select id="fType">
+            <option value="" data-i18n="form.type_def">— Sélectionnez —</option>
+            <option value="riad" data-i18n="form.riad">Riad</option>
+            <option value="hotel" data-i18n="form.hotel">Hôtel</option>
+            <option value="guest" data-i18n="form.guest">Maison d'hôtes / Auberge</option>
+            <option value="other" data-i18n="form.other">Autre</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label for="fMsg" data-i18n="form.msg">Votre projet en quelques mots *</label>
+          <textarea id="fMsg" required data-i18n-ph="form.msg_ph" placeholder="Ex. Riad de 8 chambres à Fès, je souhaite un site avec réservation en ligne."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-wa" style="justify-content:center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-2.9-.4-4.1-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.6 8.4c.4 2.9 2.7 5.2 5.6 5.6l1-1.5-2.1-1.2-1 .9c-.9-.7-1.6-1.4-2.3-2.3l.9-1-1.2-2.1-1.5 1Z"/></svg>
+            <span data-i18n="form.send">Envoyer via WhatsApp</span>
+          </button>
+          <button type="button" class="btn btn-ghost email-link" id="formMail" style="justify-content:center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            <span data-i18n="form.sendmail">Ou envoyer par email</span>
+          </button>
+        </div>
+        <p class="form-note" data-i18n="form.note">Aucune donnée n'est stockée — le message part directement vers WhatsApp ou votre messagerie.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top">
+          <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#c9a24b"/><path d="M50 14l9 27 27 9-27 9-9 27-9-27-27-9 27-9z" fill="#072e27"/></svg>
+          <span data-i18n="brand">{{AGENCY_NAME}}</span>
+        </a>
+        <p data-i18n="foot.tag">Sites web sur mesure pour riads et petits hôtels au Maroc.</p>
+      </div>
+      <div class="foot-links">
+        <h4 data-i18n="foot.nav">Navigation</h4>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+        <a href="#pricing" data-i18n="nav.pricing">Tarifs</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="foot-links">
+        <h4 data-i18n="foot.contact_h">Contact</h4>
+        <a class="wa-link" href="#" target="_blank" rel="noopener" data-i18n="contact.wa">WhatsApp</a>
+        <a class="email-link" href="#" target="_blank" rel="noopener" data-i18n="contact.email">Email</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span class="foot-demo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4.5M12 17.3v.2"/></svg>
+        <span data-i18n="foot.demo">Galerie : aperçus de style — chaque site client est conçu sur mesure.</span>
+      </span>
+      <span data-i18n="foot.rights">© {YEAR} {{AGENCY_NAME}} — Tous droits réservés.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-2.9-.4-4.1-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.6 8.4c.4 2.9 2.7 5.2 5.6 5.6l1-1.5-2.1-1.2-1 .9c-.9-.7-1.6-1.4-2.3-2.3l.9-1-1.2-2.1-1.5 1Z"/></svg>
+</a>
+
+<script>
+/* ============================================================
+   CONFIG — TOUTES LES VALEURS SONT RENSEIGNÉES / ALL VALUES SET
+   1) AGENCY_NAME      : Soufiane Web Design
+   2) WHATSAPP_NUMBER  : 212712419007 (0712419007 en format international)
+   3) EMAIL_ADDRESS    : soufiane7essmail@gmail.com
+   4) BASE_PRICE       : 2500 MAD (le prix final dépend du projet)
+   ============================================================ */
+const CONFIG = {
+  AGENCY_NAME: "Soufiane Web Design",
+  WHATSAPP_NUMBER: "212712419007",
+  EMAIL_ADDRESS: "soufiane7essmail@gmail.com",
+  BASE_PRICE: "2500"
+};
+
+const I18N = {
+  fr: {
+    _title: "{{AGENCY_NAME}} — Sites web pour riads et hôtels au Maroc",
+    brand: "{{AGENCY_NAME}}",
+    "nav.services": "Services", "nav.gallery": "Galerie", "nav.process": "Processus",
+    "nav.pricing": "Tarifs", "nav.faq": "FAQ", "nav.contact": "Contact", "nav.cta": "Devis gratuit",
+    "hero.badge": "Sites web pour riads & petits hôtels · Maroc",
+    "hero.h1a": "Un site web à votre image,", "hero.h1b": "pour accueillir vos clients en ligne.",
+    "hero.sub": "Design élégant, 100 % mobile, page de réservation et contacts clairs — livré en 2 à 3 semaines, sans engagement.",
+    "hero.cta1": "Demander un devis gratuit", "hero.cta2": "Voir les exemples",
+    "hero.note": "Devis gratuit et sans engagement.",
+    "hero.chip1": "Design sur mesure", "hero.chip2": "100 % mobile", "hero.chip3": "Français & arabe",
+    "hero.mock_k": "Riad & Spa · Marrakech", "hero.mock_t": "Bienvenue chez vous",
+    "hero.mock_p1": "Arrivée", "hero.mock_p2": "Départ", "hero.mock_b": "Réserver",
+    "offer.label": "L'offre", "offer.h2": "Je crée des sites web sur mesure pour votre établissement",
+    "offer.sub": "Que vous soyez un riad familial, une maison d'hôtes ou un petit hôtel : un site clair, rapide et beau, qui présente vos chambres, vos tarifs et vos coordonnées.",
+    "offer.p1t": "Design sur mesure", "offer.p1d": "Un style unique qui reflète l'atmosphère et les couleurs de votre riad.",
+    "offer.p2t": "100 % mobile", "offer.p2d": "Vos clients consultent votre site depuis leur téléphone, partout.",
+    "offer.p3t": "Réservation & contacts", "offer.p3d": "Formulaire de demande de réservation et liens vers vos plateformes.",
+    "offer.p4t": "Rapide à lancer", "offer.p4d": "De l'idée à la livraison en 2 à 3 semaines en moyenne.",
+    "serv.label": "Services", "serv.h2": "Des formules adaptées à chaque établissement",
+    "serv.sub": "Chaque prestation inclut un design sur mesure, l'adaptation mobile et la livraison de tous vos accès.",
+    "serv.flag1": "Le plus demandé",
+    "serv.s1t": "Site vitrine", "serv.s1d": "Présentez votre établissement : galerie photos, description, tarifs et coordonnées.",
+    "serv.s1dl": "Délai : ~1 semaine",
+    "serv.s2t": "Site avec réservation", "serv.s2d": "Ajoutez un formulaire de demande de réservation et des liens vers Booking, Airbnb ou WhatsApp.",
+    "serv.s2dl": "Délai : ~2 semaines",
+    "serv.s3t": "One-page premium", "serv.s3d": "Une page unique et immersive pour séduire dès le premier scroll.",
+    "serv.s3dl": "Délai : ~1 semaine",
+    "serv.s4t": "Refonte & mise à jour", "serv.s4d": "Modernisez un site existant ou mettez à jour vos contenus en français et en arabe.",
+    "serv.s4dl": "Délai : sur devis",
+    "serv.from": "À partir de", "serv.surdevis": "Sur devis",
+    "proc.label": "Processus", "proc.h2": "De votre idée à votre site, en 4 étapes",
+    "proc.sub": "Une méthode simple et claire, sans surprise.",
+    "proc.s1t": "Contact", "proc.s1d": "Écrivez-moi via WhatsApp ou email avec vos envies.",
+    "proc.s2t": "Devis gratuit", "proc.s2d": "Vous recevez une proposition claire, sans engagement.",
+    "proc.s3t": "Design & validation", "proc.s3d": "Je crée le design, vous validez chaque étape.",
+    "proc.s4t": "Livraison", "proc.s4d": "Votre site est en ligne, avec tous vos accès.",
+    "gal.label": "Galerie", "gal.h2": "Exemples de sites", "gal.sub": "Le style et les possibilités, présentés en avant-première.",
+    "gal.banner_t": "Aperçu de ce que vous obtenez",
+    "gal.banner_d": "Ces aperçus montrent le niveau de design, de détail et d'adaptation mobile que vous obtenez — chaque site est conçu sur mesure pour votre établissement, jamais un template.",
+    "gal.tag": "Aperçu",
+    "gal.d1t": "Riad — site vitrine", "gal.d1s": "Pages : accueil, galerie, contact",
+    "gal.d2t": "Hôtel — page réservation", "gal.d2s": "Pages : accueil, chambres, réservation",
+    "gal.d3t": "Riad — one page", "gal.d3s": "Page unique immersive",
+    "gal.d4t": "Maison d'hôtes — pages multiples", "gal.d4s": "Pages : accueil, chambres, tarifs, contact",
+    "gal.cta": "Je veux un site comme ceci",
+    "price.label": "Tarifs", "price.h2": "Un point de départ clair",
+    "price.sub": "Un prix transparent pour bien démarrer — le devis final est toujours gratuit et sans engagement.",
+    "price.from": "Site vitrine · à partir de", "price.amount": "{{BASE_PRICE}}", "price.currency": "MAD",
+    "price.note": "Le prix exact dépend de votre projet et de vos exigences : nombre de pages, réservation en ligne, contenus à intégrer — il peut être plus élevé selon les options choisies.",
+    "price.inc1": "Design sur mesure", "price.inc2": "Adaptation mobile", "price.inc3": "Formulaire de contact", "price.inc4": "Livraison des accès",
+    "price.cta": "Demander mon devis",
+    "faq.label": "FAQ", "faq.h2": "Questions fréquentes",
+    "faq.q1": "Combien coûte un site web ?",
+    "faq.a1a": "Les sites vitrines commencent à {{BASE_PRICE}} MAD. Le prix final dépend de vos choix : je vous envoie un devis détaillé et gratuit avant tout travail.",
+    "faq.q2": "Quels sont les délais de livraison ?",
+    "faq.a2": "En moyenne 2 à 3 semaines : une semaine pour le design, puis corrections et mise en ligne. Les sites vitrines simples peuvent être livrés en ~1 semaine.",
+    "faq.q3": "Puis-je ajouter la réservation en ligne ?",
+    "faq.a3": "Oui : formulaire de demande de réservation, ou liens vers vos comptes Booking, Airbnb ou WhatsApp, selon vos besoins.",
+    "faq.q4": "Mon site sera-t-il visible sur mobile ?",
+    "faq.a4": "Oui, chaque site est conçu d'abord pour mobile, puis adapté aux tablettes et aux ordinateurs.",
+    "faq.q5": "Et l'hébergement et le nom de domaine ?",
+    "faq.a5": "Je vous conseille les options adaptées à votre budget et vous accompagne dans la mise en route. Les frais d'hébergement et de domaine sont séparés et facturés par le prestataire.",
+    "contact.label": "Contact", "contact.h2": "Demandez votre devis gratuit",
+    "contact.sub": "Parlez-moi de votre établissement : je vous réponds rapidement avec une proposition et un prix, sans engagement.",
+    "contact.wa": "WhatsApp", "contact.wa_s": "Réponse rapide, 7j/7",
+    "contact.email": "Email", "contact.email_s": "Pour les demandes détaillées",
+    "contact.loc": "Maroc", "contact.loc_s": "Clients sur tout le territoire",
+    "contact.wa_msg": "Bonjour, je souhaite un devis pour un site web pour mon établissement.",
+    "contact.mail_subject": "Demande de devis — site web",
+    "form.title": "Demande de devis", "form.sub": "Remplissez ce formulaire : il ouvre WhatsApp avec votre message pré-rempli.",
+    "form.name": "Votre nom *", "form.name_ph": "Ex. Karim Benali",
+    "form.business": "Nom de l'établissement", "form.business_ph": "Ex. Riad des Oliviers",
+    "form.type": "Type d'établissement", "form.type_def": "— Sélectionnez —",
+    "form.riad": "Riad", "form.hotel": "Hôtel", "form.guest": "Maison d'hôtes / Auberge", "form.other": "Autre",
+    "form.msg": "Votre projet en quelques mots *", "form.msg_ph": "Ex. Riad de 8 chambres à Fès, je souhaite un site avec réservation en ligne.",
+    "form.send": "Envoyer via WhatsApp", "form.sendmail": "Ou envoyer par email",
+    "form.note": "Aucune donnée n'est stockée — le message part directement vers WhatsApp ou votre messagerie.",
+    "form.req": "Veuillez remplir les champs obligatoires.",
+    "form.bad": "Avant de publier : remplacez WHATSAPP_NUMBER (et les autres valeurs) dans la section CONFIG du code.",
+    "foot.tag": "Sites web sur mesure pour riads et petits hôtels au Maroc.",
+    "foot.nav": "Navigation", "foot.contact_h": "Contact",
+    "foot.demo": "Galerie : aperçus de style — chaque site client est conçu sur mesure.",
+    "foot.rights": "© {YEAR} {{AGENCY_NAME}} — Tous droits réservés."
+  },
+  ar: {
+    _title: "{{AGENCY_NAME}} — مواقع إلكترونية للريادات والفنادق في المغرب",
+    brand: "{{AGENCY_NAME}}",
+    "nav.services": "الخدمات", "nav.gallery": "المعرض", "nav.process": "مراحل العمل",
+    "nav.pricing": "الأسعار", "nav.faq": "الأسئلة الشائعة", "nav.contact": "اتصل بنا", "nav.cta": "عرض سعر مجاني",
+    "hero.badge": "مواقع إلكترونية للريادات والفنادق الصغيرة · المغرب",
+    "hero.h1a": "موقع إلكتروني يعكس هويتك،", "hero.h1b": "لاستقبال ضيوفك على الإنترنت.",
+    "hero.sub": "تصميم أنيق، متوافق 100% مع الجوال، صفحة حجز ومعلومات اتصال واضحة — التسليم خلال أسبوعين إلى ثلاثة، دون التزام.",
+    "hero.cta1": "اطلب عرض سعر مجاني", "hero.cta2": "رؤية الأمثلة",
+    "hero.note": "عرض سعر مجاني دون التزام.",
+    "hero.chip1": "تصميم مخصص", "hero.chip2": "متوافق 100% مع الجوال", "hero.chip3": "بالفرنسية والعربية",
+    "hero.mock_k": "رياض وسبا · مراكش", "hero.mock_t": "أهلاً بكم في داركم",
+    "hero.mock_p1": "الوصول", "hero.mock_p2": "المغادرة", "hero.mock_b": "احجز",
+    "offer.label": "العرض", "offer.h2": "أصمم مواقع إلكترونية مخصصة لمنشأتك",
+    "offer.sub": "سواء كنت تدير رياضاً عائلياً أو دار ضيافة أو فندقاً صغيراً: موقع واضح وسريع وجميل يعرض غرفك وأسعارك ومعلومات اتصالك.",
+    "offer.p1t": "تصميم مخصص", "offer.p1d": "أسلوب فريد يعكس أجواء رياضك وألوانه.",
+    "offer.p2t": "متوافق 100% مع الجوال", "offer.p2d": "ضيوفك يتصفحون موقعك من هواتفهم أينما كانوا.",
+    "offer.p3t": "الحجز والتواصل", "offer.p3d": "نموذج طلب حجز وروابط إلى منصاتك.",
+    "offer.p4t": "إطلاق سريع", "offer.p4d": "من الفكرة إلى التسليم خلال أسبوعين إلى ثلاثة في المتوسط.",
+    "serv.label": "الخدمات", "serv.h2": "عروض تناسب كل منشأة",
+    "serv.sub": "كل خدمة تشمل تصميماً مخصصاً، والتكيف مع الجوال، وتسليم جميع بيانات الدخول.",
+    "serv.flag1": "الأكثر طلباً",
+    "serv.s1t": "موقع عرض", "serv.s1d": "اعرض منشأتك: معرض صور، وصف، أسعار ومعلومات الاتصال.",
+    "serv.s1dl": "المدة: أسبوع تقريباً",
+    "serv.s2t": "موقع مع حجز", "serv.s2d": "أضف نموذج طلب حجز وروابط إلى Booking أو Airbnb أو واتساب.",
+    "serv.s2dl": "المدة: أسبوعان تقريباً",
+    "serv.s3t": "صفحة واحدة فاخرة", "serv.s3d": "صفحة واحدة غامرة لإبهار الزائر من أول تمرير.",
+    "serv.s3dl": "المدة: أسبوع تقريباً",
+    "serv.s4t": "إعادة تصميم وتحديث", "serv.s4d": "حدّث موقعاً قائماً أو جدّد محتواك بالفرنسية والعربية.",
+    "serv.s4dl": "المدة: حسب العرض",
+    "serv.from": "تبدأ من", "serv.surdevis": "حسب العرض",
+    "proc.label": "مراحل العمل", "proc.h2": "من فكرتك إلى موقعك في 4 خطوات",
+    "proc.sub": "طريقة بسيطة وواضحة، دون مفاجآت.",
+    "proc.s1t": "التواصل", "proc.s1d": "أرسل لي رسالة عبر واتساب أو البريد مع رغباتك.",
+    "proc.s2t": "عرض سعر مجاني", "proc.s2d": "تتلقى مقترحاً واضحاً دون التزام.",
+    "proc.s3t": "التصميم والاعتماد", "proc.s3d": "أصمم الموقع وتعتمد كل مرحلة.",
+    "proc.s4t": "التسليم", "proc.s4d": "يصبح موقعك على الإنترنت مع جميع بيانات الدخول.",
+    "gal.label": "المعرض", "gal.h2": "أمثلة على مواقع", "gal.sub": "الأسلوب والإمكانيات، في معاينة خاصة.",
+    "gal.banner_t": "معاينة لما ستحصل عليه",
+    "gal.banner_d": "تُظهر هذه المعاينات مستوى التصميم والتفاصيل والتكيف مع الجوال الذي ستحصل عليه — كل موقع يُصمم خصيصاً لمنشأتك، وليس قالباً جاهزاً.",
+    "gal.tag": "معاينة",
+    "gal.d1t": "رياض — موقع عرض", "gal.d1s": "صفحات: الرئيسية، المعرض، الاتصال",
+    "gal.d2t": "فندق — صفحة حجز", "gal.d2s": "صفحات: الرئيسية، الغرف، الحجز",
+    "gal.d3t": "رياض — صفحة واحدة", "gal.d3s": "صفحة واحدة غامرة",
+    "gal.d4t": "دار ضيافة — صفحات متعددة", "gal.d4s": "صفحات: الرئيسية، الغرف، الأسعار، الاتصال",
+    "gal.cta": "أريد موقعاً مثل هذا",
+    "price.label": "الأسعار", "price.h2": "بداية واضحة",
+    "price.sub": "سعر شفاف للبدء — والعرض النهائي مجاني دائماً ودون التزام.",
+    "price.from": "موقع عرض · تبدأ من", "price.amount": "{{BASE_PRICE}}", "price.currency": "درهم",
+    "price.note": "السعر الدقيق يعتمد على مشروعك ومتطلباتك: عدد الصفحات، الحجز الإلكتروني، المحتوى المراد إدراجه — وقد يكون أعلى حسب الخيارات المختارة.",
+    "price.inc1": "تصميم مخصص", "price.inc2": "تكييف مع الجوال", "price.inc3": "نموذج اتصال", "price.inc4": "تسليم بيانات الدخول",
+    "price.cta": "اطلب عرض السعر",
+    "faq.label": "الأسئلة الشائعة", "faq.h2": "الأسئلة المتكررة",
+    "faq.q1": "كم يكلف موقع إلكتروني؟",
+    "faq.a1a": "تبدأ مواقع العرض من {{BASE_PRICE}} درهم. السعر النهائي يعتمد على اختياراتك: أرسل لك عرض سعر مفصل مجاني قبل أي عمل.",
+    "faq.q2": "ما هي مدة التسليم؟",
+    "faq.a2": "في المتوسط أسبوعان إلى ثلاثة: أسبوع للتصميم، ثم التعديلات والنشر. مواقع العرض البسيطة يمكن تسليمها في أسبوع تقريباً.",
+    "faq.q3": "هل يمكنني إضافة الحجز الإلكتروني؟",
+    "faq.a3": "نعم: نموذج طلب حجز، أو روابط لحساباتك على Booking أو Airbnb أو واتساب، حسب احتياجك.",
+    "faq.q4": "هل سيظهر موقعي على الجوال؟",
+    "faq.a4": "نعم، كل موقع يُصمم أولاً للجوال ثم يُكيَّف للأجهزة اللوحية والحاسوب.",
+    "faq.q5": "وماذا عن الاستضافة واسم النطاق؟",
+    "faq.a5": "أنصحك بالخيارات المناسبة لميزانيتك وأرافقك في الإعداد. تكاليف الاستضافة والنطاق منفصلة ويدفعها مزود الخدمة.",
+    "contact.label": "التواصل", "contact.h2": "اطلب عرض السعر المجاني",
+    "contact.sub": "أخبرني عن منشأتك: أرد عليك بسرعة بمقترح وسعر، دون التزام.",
+    "contact.wa": "واتساب", "contact.wa_s": "رد سريع، طوال الأسبوع",
+    "contact.email": "البريد الإلكتروني", "contact.email_s": "للطلبات المفصلة",
+    "contact.loc": "المغرب", "contact.loc_s": "عملاء في كل أنحاء البلاد",
+    "contact.wa_msg": "مرحباً، أريد عرض سعر لموقع إلكتروني لمنشأتي.",
+    "contact.mail_subject": "طلب عرض سعر — موقع إلكتروني",
+    "form.title": "طلب عرض السعر", "form.sub": "املأ هذا النموذج: سيتم فتح واتساب مع رسالتك معبأة مسبقاً.",
+    "form.name": "اسمك *", "form.name_ph": "مثال: كريم بنعلي",
+    "form.business": "اسم المنشأة", "form.business_ph": "مثال: رياض الزيتون",
+    "form.type": "نوع المنشأة", "form.type_def": "— اختر —",
+    "form.riad": "رياض", "form.hotel": "فندق", "form.guest": "دار ضيافة / نزل", "form.other": "أخرى",
+    "form.msg": "مشروعك في بضع كلمات *", "form.msg_ph": "مثال: رياض من 8 غرف في فاس، أريد موقعاً مع حجز إلكتروني.",
+    "form.send": "أرسل عبر واتساب", "form.sendmail": "أو أرسل بالبريد الإلكتروني",
+    "form.note": "لا تُخزَّن أي بيانات — الرسالة تذهب مباشرة إلى واتساب أو بريدك.",
+    "form.req": "يرجى ملء الحقول المطلوبة.",
+    "form.bad": "قبل النشر: استبدل WHATSAPP_NUMBER (والقيم الأخرى) في قسم CONFIG بالكود.",
+    "foot.tag": "مواقع إلكترونية مخصصة للريادات والفنادق الصغيرة في المغرب.",
+    "foot.nav": "الروابط", "foot.contact_h": "التواصل",
+    "foot.demo": "المعرض: معاينات أسلوب — كل موقع للعميل يُصمم خصيصاً له.",
+    "foot.rights": "© {YEAR} {{AGENCY_NAME}} — جميع الحقوق محفوظة."
+  }
+};
+
+(function(){
+  "use strict";
+  var html = document.documentElement;
+  var year = new Date().getFullYear();
+  var currentLang = localStorage.getItem("lang") || "fr";
+
+  function t(key){
+    return (I18N[currentLang] && I18N[currentLang][key] !== undefined) ? I18N[currentLang][key] : (I18N.fr[key] || "");
+  }
+  function fillTokens(str){
+    return String(str)
+      .split("{{AGENCY_NAME}}").join(CONFIG.AGENCY_NAME)
+      .split("{{BASE_PRICE}}").join(CONFIG.BASE_PRICE)
+      .split("{{WHATSAPP_NUMBER}}").join(CONFIG.WHATSAPP_NUMBER)
+      .split("{{EMAIL_ADDRESS}}").join(CONFIG.EMAIL_ADDRESS)
+      .split("{YEAR}").join(year);
+  }
+
+  function applyLinks(){
+    var waMsg = encodeURIComponent(fillTokens(t("contact.wa_msg")));
+    var mailSubject = encodeURIComponent(fillTokens(t("contact.mail_subject")));
+    document.querySelectorAll(".wa-link").forEach(function(a){
+      a.href = "https://wa.me/" + CONFIG.WHATSAPP_NUMBER + "?text=" + waMsg;
+    });
+    document.querySelectorAll(".email-link").forEach(function(a){
+      a.href = "mailto:" + CONFIG.EMAIL_ADDRESS + "?subject=" + mailSubject;
+    });
+  }
+
+  function setLang(lang){
+    currentLang = lang;
+    html.lang = lang;
+    html.dir = (lang === "ar") ? "rtl" : "ltr";
+    document.title = fillTokens(t("_title"));
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var key = el.getAttribute("data-i18n");
+      if (I18N[lang][key] !== undefined) el.textContent = fillTokens(I18N[lang][key]);
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+      var key = el.getAttribute("data-i18n-ph");
+      if (I18N[lang][key] !== undefined) el.setAttribute("placeholder", fillTokens(I18N[lang][key]));
+    });
+    document.getElementById("btnFr").classList.toggle("active", lang === "fr");
+    document.getElementById("btnAr").classList.toggle("active", lang === "ar");
+    localStorage.setItem("lang", lang);
+    applyLinks();
+  }
+
+  document.getElementById("btnFr").addEventListener("click", function(){ setLang("fr"); });
+  document.getElementById("btnAr").addEventListener("click", function(){ setLang("ar"); });
+  setLang(currentLang);
+
+  /* Mobile menu */
+  var burger = document.getElementById("burger");
+  var navLinks = document.getElementById("navLinks");
+  burger.addEventListener("click", function(){
+    var open = navLinks.classList.toggle("open");
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  navLinks.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){
+      navLinks.classList.remove("open");
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* Header shadow */
+  var header = document.getElementById("header");
+  function onScroll(){ header.classList.toggle("scrolled", window.scrollY > 20); }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  /* FAQ accordion */
+  document.querySelectorAll(".acc-item").forEach(function(item){
+    var btn = item.querySelector(".acc-btn");
+    var panel = item.querySelector(".acc-panel");
+    btn.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      document.querySelectorAll(".acc-item.open").forEach(function(o){
+        o.classList.remove("open");
+        o.querySelector(".acc-panel").style.maxHeight = null;
+        o.querySelector(".acc-btn").setAttribute("aria-expanded", "false");
+      });
+      if (!isOpen){
+        item.classList.add("open");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  /* Reveal on scroll */
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll(".rv").forEach(function(el, i){
+      el.style.setProperty("--d", ((i % 4) * 0.06) + "s");
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("visible"); });
+  }
+
+  /* ---------- Live mini-site demos (gallery) ---------- */
+  var MF = '<div class="m-feat"><span class="ic"></span><b></b><b class="w2"></b></div>';
+  var MS = {
+    nav: '<div class="m-nav"><span class="m-logo"></span><span class="m-name"></span><span class="m-links"><i></i><i></i><i></i></span><span class="m-cta"><i></i></span></div>',
+    hero: '<div class="m-hero"><span class="m-arch"></span><div class="m-kick"></div><div class="m-title"></div><div class="m-title2"></div><div class="m-btns"><span class="m-btn"><i></i></span><span class="m-btn ghost"><i></i></span></div></div>',
+    heroBig: '<div class="m-hero big"><span class="m-arch"></span><div class="m-kick"></div><div class="m-title"></div><div class="m-title2"></div><div class="m-btns"><span class="m-btn"><i></i></span><span class="m-btn ghost"><i></i></span></div></div>',
+    feats: '<div class="m-sec"><div class="m-sec-title"></div><div class="m-feats">' + MF + MF + MF + '</div></div>',
+    photos: '<div class="m-sec"><div class="m-photos"><span class="m-photo ph1"></span><span class="m-photo ph2"></span><span class="m-photo ph3"></span></div></div>',
+    book: '<div class="m-book"><span class="m-pill"></span><span class="m-pill"></span><span class="m-pill"></span><span class="m-btn"><i></i></span></div>',
+    rooms: '<div class="m-sec"><div class="m-room"><span class="ph ph1"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div><div class="m-room"><span class="ph ph2"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div><div class="m-room"><span class="ph ph3"></span><span class="tx"><b></b><b class="w2"></b></span><span class="pr"></span></div></div>',
+    strip: '<div class="m-strip"><i></i><i></i><i></i></div>',
+    banner: '<div class="m-banner"><b></b><i></i></div>',
+    cols: '<div class="m-cols"><span class="ph ph2"></span><span class="tx"><b></b><b class="w2"></b><b class="w3"></b></span></div>',
+    foot: '<div class="m-foot"><i></i><i></i><i></i></div>'
+  };
+  var DEMOS = {
+    g1: { t1:"#0b4f43", t2:"#14685a", t3:"#c9a24b", d:["nav","hero","feats","photos","strip","foot"], p:["nav","hero","feats","book","foot"] },
+    g2: { t1:"#232f6b", t2:"#3d4f9e", t3:"#c9a24b", d:["nav","hero","book","rooms","foot"], p:["nav","hero","book","rooms","foot"] },
+    g3: { t1:"#a9431f", t2:"#c9762f", t3:"#0b4f43", d:["nav","heroBig","cols","feats","banner","foot"], p:["nav","hero","feats","banner","foot"] },
+    g4: { t1:"#33544d", t2:"#0b4f43", t3:"#c9762f", d:["nav","hero","rooms","strip","foot"], p:["nav","hero","rooms","foot"] }
+  };
+  function buildMini(cfg, blocks){
+    var el = document.createElement("div");
+    el.className = "mini";
+    el.style.setProperty("--t1", cfg.t1);
+    el.style.setProperty("--t2", cfg.t2);
+    el.style.setProperty("--t3", cfg.t3);
+    blocks.forEach(function(b){ if (MS[b]) el.insertAdjacentHTML("beforeend", MS[b]); });
+    return el;
+  }
+  document.querySelectorAll(".shot-stage").forEach(function(stage){
+    var cfg = DEMOS[stage.getAttribute("data-demo")];
+    if (!cfg) return;
+    stage.appendChild(buildMini(cfg, cfg.d));
+    var ph = document.createElement("div");
+    ph.className = "m-phone";
+    ph.appendChild(buildMini(cfg, cfg.p));
+    stage.appendChild(ph);
+  });
+
+  /* Quote form */
+  var form = document.getElementById("quoteForm");
+  var alertBox = document.getElementById("formAlert");
+  var fName = document.getElementById("fName");
+  var fBiz = document.getElementById("fBiz");
+  var fType = document.getElementById("fType");
+  var fMsg = document.getElementById("fMsg");
+  var formMail = document.getElementById("formMail");
+
+  function showAlert(msg){
+    alertBox.textContent = msg;
+    alertBox.classList.add("show");
+    alertBox.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+  function placeholdersReplaced(){
+    return CONFIG.WHATSAPP_NUMBER.indexOf("{{") === -1 && CONFIG.EMAIL_ADDRESS.indexOf("{{") === -1;
+  }
+  function buildMessage(){
+    var parts = [];
+    parts.push(fillTokens(t("form.name")).replace(" *", "") + " : " + fName.value.trim());
+    if (fBiz.value.trim()) parts.push(fillTokens(t("form.business")) + " : " + fBiz.value.trim());
+    if (fType.value) parts.push(fillTokens(t("form.type")) + " : " + fType.options[fType.selectedIndex].text);
+    parts.push(fillTokens(t("form.msg")).replace(" *", "") + " : " + fMsg.value.trim());
+    return parts.join("\n") + "\n\n— " + fillTokens(t("contact.mail_subject"));
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (!fName.value.trim() || !fMsg.value.trim()){ showAlert(fillTokens(t("form.req"))); return; }
+    if (!placeholdersReplaced()){ showAlert(fillTokens(t("form.bad"))); return; }
+    var link = "https://wa.me/" + CONFIG.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(buildMessage());
+    window.open(link, "_blank", "noopener");
+  });
+  formMail.addEventListener("click", function(){
+    if (!fName.value.trim() || !fMsg.value.trim()){ showAlert(fillTokens(t("form.req"))); return; }
+    if (!placeholdersReplaced()){ showAlert(fillTokens(t("form.bad"))); return; }
+    var href = "mailto:" + CONFIG.EMAIL_ADDRESS +
+      "?subject=" + encodeURIComponent(fillTokens(t("contact.mail_subject"))) +
+      "&body=" + encodeURIComponent(buildMessage());
+    window.location.href = href;
+  });
+})();
+</script>
+</body>
+</html>
