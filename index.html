@@ -3,12 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Zellige Studio — création de sites web sur mesure pour riads et petits hôtels au Maroc. Devis gratuit, livraison en 2 à 3 semaines.">
+<meta name="description" content="Zellige Studio — création de sites web sur mesure pour riads et petits hôtels au Maroc. Devis gratuit, livraison en 3 jours maximum.">
 <meta property="og:title" content="Zellige Studio — Sites web pour riads et hôtels au Maroc">
 <meta property="og:description" content="Design sur mesure, 100% mobile, réservation en ligne. Devis gratuit et sans engagement.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#faf6ee">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://zelligestudio.netlify.app/">
+<meta name="author" content="Zellige Studio">
+<meta name="keywords" content="création site web riad maroc, site web hôtel maroc, site web pour riad, hotel website morocco, réservation en ligne riad, devis site web maroc, Zellige Studio">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://zelligestudio.netlify.app/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:image" content="https://zelligestudio.netlify.app/img/hero-mockup.jpg">
+<meta property="og:image:alt" content="Exemple de site web pour riad réalisé par Zellige Studio">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zellige Studio - Sites web pour riads et hôtels au Maroc">
+<meta name="twitter:description" content="Design sur mesure, 100% mobile, réservation en ligne. Devis gratuit et sans engagement.">
+<meta name="twitter:image" content="https://zelligestudio.netlify.app/img/hero-mockup.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Zellige Studio",
+  "description": "Création de sites web sur mesure pour riads et petits hôtels au Maroc. Design sur mesure, 100% mobile, réservation en ligne. Devis gratuit, livraison en 3 jours maximum.",
+  "url": "https://zelligestudio.netlify.app/",
+  "telephone": "+212712419007",
+  "email": "soufiane7essmail@gmail.com",
+  "areaServed": "MA",
+  "knowsLanguage": ["fr", "ar"],
+  "priceRange": "2500 MAD",
+  "address": {"@type": "PostalAddress", "addressCountry": "MA"},
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "Site web sur mesure pour riad ou hôtel",
+    "description": "Site vitrine 100% mobile avec réservation en ligne, design sur mesure, livré en 3 jours maximum.",
+    "price": "2500",
+    "priceCurrency": "MAD"
+  }
+}
+</script>
 <title>Zellige Studio — Sites web pour riads et hôtels au Maroc</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b4f43'/%3E%3Cpath d='M50 14l9 27 27 9-27 9-9 27-9-27-27-9 27-9z' fill='%23c9a24b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +73,8 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--green);color:#fff;padding:.7rem 1.2rem;z-index:999;border-radius:0 0 12px 0;font-weight:600;text-decoration:none}
+.skip-link:focus{left:0}
 body{
   background:var(--bg);
   color:var(--ink);
@@ -418,6 +458,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
 </style>
 </head>
 <body>
+  <a class="skip-link" href="#top" data-i18n="skip">Aller au contenu</a>
 
 <!-- ================= NAV ================= -->
 <header id="header">
@@ -451,7 +492,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
     <div>
       <span class="badge rv"><i></i><span data-i18n="hero.badge">Sites web pour riads &amp; petits hôtels · Maroc</span></span>
       <h1 class="rv" style="--d:.06s"><span data-i18n="hero.h1a">Un site web à votre image,</span><br><span class="accent" data-i18n="hero.h1b">pour accueillir vos clients en ligne.</span></h1>
-      <p class="sub rv" style="--d:.12s" data-i18n="hero.sub">Design élégant, 100&nbsp;% mobile, page de réservation et contacts clairs — livré en 2 à 3 semaines, sans engagement.</p>
+      <p class="sub rv" style="--d:.12s" data-i18n="hero.sub">Design élégant, 100&nbsp;% mobile, page de réservation et contacts clairs — livré en 3 jours maximum, sans engagement.</p>
       <div class="hero-cta rv" style="--d:.18s">
         <a href="#contact" class="btn btn-terra">
           <span data-i18n="hero.cta1">Demander un devis gratuit</span>
@@ -470,7 +511,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       </div>
     </div>
       <div class="mockup rv" style="--d:.15s" aria-hidden="true">
-        <img class="mb-overlay" src="img/hero-mockup.jpg" alt="" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
+        <img class="mb-overlay" src="img/hero-mockup.jpg" alt="Exemple de site web pour riad - accueil avec réservation en ligne, par Zellige Studio" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
         <div class="browser">
         <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">votre-riad.ma</span></div>
         <div class="mock-hero">
@@ -524,7 +565,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       <div class="offer-card rv" style="--d:.21s">
         <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
         <h3 data-i18n="offer.p4t">Rapide à lancer</h3>
-        <p data-i18n="offer.p4d">De l'idée à la livraison en 2 à 3 semaines en moyenne.</p>
+        <p data-i18n="offer.p4d">De l'idée à la livraison en 3 jours maximum.</p>
       </div>
     </div>
   </div>
@@ -544,7 +585,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
         <h3 data-i18n="serv.s1t">Site vitrine</h3>
         <p data-i18n="serv.s1d">Présentez votre établissement : galerie photos, description, tarifs et coordonnées.</p>
         <div class="meta">
-          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s1dl">Délai : ~1 semaine</span></span>
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s1dl">Délai : ~1 jour</span></span>
           <span class="price"><small data-i18n="serv.from">À partir de</small> <span data-i18n="price.amount">{{BASE_PRICE}}</span> <span data-i18n="price.currency">MAD</span></span>
         </div>
       </div>
@@ -552,7 +593,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
         <h3 data-i18n="serv.s2t">Site avec réservation</h3>
         <p data-i18n="serv.s2d">Ajoutez un formulaire de demande de réservation et des liens vers Booking, Airbnb ou WhatsApp.</p>
         <div class="meta">
-          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s2dl">Délai : ~2 semaines</span></span>
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s2dl">Délai : ~2 jours</span></span>
           <span class="price"><small>&nbsp;</small><span data-i18n="serv.surdevis">Sur devis</span></span>
         </div>
       </div>
@@ -560,7 +601,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
         <h3 data-i18n="serv.s3t">One-page premium</h3>
         <p data-i18n="serv.s3d">Une page unique et immersive pour séduire dès le premier scroll.</p>
         <div class="meta">
-          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s3dl">Délai : ~1 semaine</span></span>
+          <span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="serv.s3dl">Délai : ~1 jour</span></span>
           <span class="price"><small>&nbsp;</small><span data-i18n="serv.surdevis">Sur devis</span></span>
         </div>
       </div>
@@ -605,7 +646,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
     <div class="gal-grid">
       <article class="gal-card g1 rv">
         <div class="shot">
-          <img class="shot-overlay" src="img/demo-1.jpg" alt="" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
+          <img class="shot-overlay" src="img/demo-1.jpg" alt="Exemple de site web pour riad - accueil, galerie photos et réservation" loading="lazy" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
           <span class="gal-tag" data-i18n="gal.tag">Aperçu</span>
           <div class="shot-bar"><i></i><i></i><i></i></div>
           <div class="shot-stage" data-demo="g1" aria-hidden="true"></div>
@@ -618,7 +659,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       </article>
       <article class="gal-card g2 rv" style="--d:.07s">
         <div class="shot">
-          <img class="shot-overlay" src="img/demo-2.jpg" alt="" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
+          <img class="shot-overlay" src="img/demo-2.jpg" alt="Exemple de site web pour hôtel - chambres, tarifs et réservation" loading="lazy" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
           <span class="gal-tag" data-i18n="gal.tag">Aperçu</span>
           <div class="shot-bar"><i></i><i></i><i></i></div>
           <div class="shot-stage" data-demo="g2" aria-hidden="true"></div>
@@ -631,7 +672,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       </article>
       <article class="gal-card g3 rv" style="--d:.14s">
         <div class="shot">
-          <img class="shot-overlay" src="img/demo-3.jpg" alt="" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
+          <img class="shot-overlay" src="img/demo-3.jpg" alt="Exemple de site web pour riad - design berbère et galerie photos" loading="lazy" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
           <span class="gal-tag" data-i18n="gal.tag">Aperçu</span>
           <div class="shot-bar"><i></i><i></i><i></i></div>
           <div class="shot-stage" data-demo="g3" aria-hidden="true"></div>
@@ -644,7 +685,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       </article>
       <article class="gal-card g4 rv" style="--d:.21s">
         <div class="shot">
-          <img class="shot-overlay" src="img/demo-4.jpg" alt="" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
+          <img class="shot-overlay" src="img/demo-4.jpg" alt="Exemple de site web pour maison d'hôtes - chambres et contact" loading="lazy" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'">
           <span class="gal-tag" data-i18n="gal.tag">Aperçu</span>
           <div class="shot-bar"><i></i><i></i><i></i></div>
           <div class="shot-stage" data-demo="g4" aria-hidden="true"></div>
@@ -699,7 +740,7 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       </div>
       <div class="acc-item">
         <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q2">Quels sont les délais de livraison ?</span><span class="pm">+</span></button>
-        <div class="acc-panel"><p data-i18n="faq.a2">En moyenne 2 à 3 semaines : une semaine pour le design, puis corrections et mise en ligne. Les sites vitrines simples peuvent être livrés en ~1 semaine.</p></div>
+        <div class="acc-panel"><p data-i18n="faq.a2">En 3 jours maximum : un jour pour le design, puis corrections et mise en ligne. Les sites vitrines simples sont souvent livrés en 24 à 48 h.</p></div>
       </div>
       <div class="acc-item">
         <button class="acc-btn" type="button" aria-expanded="false"><span data-i18n="faq.q3">Puis-je ajouter la réservation en ligne ?</span><span class="pm">+</span></button>
@@ -856,7 +897,7 @@ const I18N = {
     "nav.pricing": "Tarifs", "nav.faq": "FAQ", "nav.contact": "Contact", "nav.cta": "Devis gratuit",
     "hero.badge": "Sites web pour riads & petits hôtels · Maroc",
     "hero.h1a": "Un site web à votre image,", "hero.h1b": "pour accueillir vos clients en ligne.",
-    "hero.sub": "Design élégant, 100 % mobile, page de réservation et contacts clairs — livré en 2 à 3 semaines, sans engagement.",
+    "hero.sub": "Design élégant, 100 % mobile, page de réservation et contacts clairs — livré en 3 jours maximum, sans engagement.",
     "hero.cta1": "Demander un devis gratuit", "hero.cta2": "Voir les exemples",
     "hero.note": "Devis gratuit et sans engagement.",
     "hero.chip1": "Design sur mesure", "hero.chip2": "100 % mobile", "hero.chip3": "Français & arabe",
@@ -867,16 +908,16 @@ const I18N = {
     "offer.p1t": "Design sur mesure", "offer.p1d": "Un style unique qui reflète l'atmosphère et les couleurs de votre riad.",
     "offer.p2t": "100 % mobile", "offer.p2d": "Vos clients consultent votre site depuis leur téléphone, partout.",
     "offer.p3t": "Réservation & contacts", "offer.p3d": "Formulaire de demande de réservation et liens vers vos plateformes.",
-    "offer.p4t": "Rapide à lancer", "offer.p4d": "De l'idée à la livraison en 2 à 3 semaines en moyenne.",
+    "offer.p4t": "Rapide à lancer", "offer.p4d": "De l'idée à la livraison en 3 jours maximum.",
     "serv.label": "Services", "serv.h2": "Des formules adaptées à chaque établissement",
     "serv.sub": "Chaque prestation inclut un design sur mesure, l'adaptation mobile et la livraison de tous vos accès.",
     "serv.flag1": "Le plus demandé",
     "serv.s1t": "Site vitrine", "serv.s1d": "Présentez votre établissement : galerie photos, description, tarifs et coordonnées.",
-    "serv.s1dl": "Délai : ~1 semaine",
+    "serv.s1dl": "Délai : ~1 jour",
     "serv.s2t": "Site avec réservation", "serv.s2d": "Ajoutez un formulaire de demande de réservation et des liens vers Booking, Airbnb ou WhatsApp.",
-    "serv.s2dl": "Délai : ~2 semaines",
+    "serv.s2dl": "Délai : ~2 jours",
     "serv.s3t": "One-page premium", "serv.s3d": "Une page unique et immersive pour séduire dès le premier scroll.",
-    "serv.s3dl": "Délai : ~1 semaine",
+    "serv.s3dl": "Délai : ~1 jour",
     "serv.s4t": "Refonte & mise à jour", "serv.s4d": "Modernisez un site existant ou mettez à jour vos contenus en français et en arabe.",
     "serv.s4dl": "Délai : sur devis",
     "serv.from": "À partir de", "serv.surdevis": "Sur devis",
@@ -904,7 +945,7 @@ const I18N = {
     "faq.q1": "Combien coûte un site web ?",
     "faq.a1a": "Les sites vitrines commencent à {{BASE_PRICE}} MAD. Le prix final dépend de vos choix : je vous envoie un devis détaillé et gratuit avant tout travail.",
     "faq.q2": "Quels sont les délais de livraison ?",
-    "faq.a2": "En moyenne 2 à 3 semaines : une semaine pour le design, puis corrections et mise en ligne. Les sites vitrines simples peuvent être livrés en ~1 semaine.",
+    "faq.a2": "En 3 jours maximum : un jour pour le design, puis corrections et mise en ligne. Les sites vitrines simples sont souvent livrés en 24 à 48 h.",
     "faq.q3": "Puis-je ajouter la réservation en ligne ?",
     "faq.a3": "Oui : formulaire de demande de réservation, ou liens vers vos comptes Booking, Airbnb ou WhatsApp, selon vos besoins.",
     "faq.q4": "Mon site sera-t-il visible sur mobile ?",
@@ -928,6 +969,7 @@ const I18N = {
     "form.note": "Aucune donnée n'est stockée — le message part directement vers WhatsApp ou votre messagerie.",
     "form.req": "Veuillez remplir les champs obligatoires.",
     "form.bad": "Avant de publier : remplacez WHATSAPP_NUMBER (et les autres valeurs) dans la section CONFIG du code.",
+    "skip": "Aller au contenu",
     "foot.tag": "Sites web sur mesure pour riads et petits hôtels au Maroc.",
     "foot.nav": "Navigation", "foot.contact_h": "Contact",
     "foot.demo": "Galerie : aperçus de style — chaque site client est conçu sur mesure.",
@@ -940,7 +982,7 @@ const I18N = {
     "nav.pricing": "الأسعار", "nav.faq": "الأسئلة الشائعة", "nav.contact": "اتصل بنا", "nav.cta": "عرض سعر مجاني",
     "hero.badge": "مواقع إلكترونية للريادات والفنادق الصغيرة · المغرب",
     "hero.h1a": "موقع إلكتروني يعكس هويتك،", "hero.h1b": "لاستقبال ضيوفك على الإنترنت.",
-    "hero.sub": "تصميم أنيق، متوافق 100% مع الجوال، صفحة حجز ومعلومات اتصال واضحة — التسليم خلال أسبوعين إلى ثلاثة، دون التزام.",
+    "hero.sub": "تصميم أنيق، متوافق 100% مع الجوال، صفحة حجز ومعلومات اتصال واضحة — التسليم خلال 3 أيام على الأكثر، دون التزام.",
     "hero.cta1": "اطلب عرض سعر مجاني", "hero.cta2": "رؤية الأمثلة",
     "hero.note": "عرض سعر مجاني دون التزام.",
     "hero.chip1": "تصميم مخصص", "hero.chip2": "متوافق 100% مع الجوال", "hero.chip3": "بالفرنسية والعربية",
@@ -951,16 +993,16 @@ const I18N = {
     "offer.p1t": "تصميم مخصص", "offer.p1d": "أسلوب فريد يعكس أجواء رياضك وألوانه.",
     "offer.p2t": "متوافق 100% مع الجوال", "offer.p2d": "ضيوفك يتصفحون موقعك من هواتفهم أينما كانوا.",
     "offer.p3t": "الحجز والتواصل", "offer.p3d": "نموذج طلب حجز وروابط إلى منصاتك.",
-    "offer.p4t": "إطلاق سريع", "offer.p4d": "من الفكرة إلى التسليم خلال أسبوعين إلى ثلاثة في المتوسط.",
+    "offer.p4t": "إطلاق سريع", "offer.p4d": "من الفكرة إلى التسليم خلال 3 أيام على الأكثر.",
     "serv.label": "الخدمات", "serv.h2": "عروض تناسب كل منشأة",
     "serv.sub": "كل خدمة تشمل تصميماً مخصصاً، والتكيف مع الجوال، وتسليم جميع بيانات الدخول.",
     "serv.flag1": "الأكثر طلباً",
     "serv.s1t": "موقع عرض", "serv.s1d": "اعرض منشأتك: معرض صور، وصف، أسعار ومعلومات الاتصال.",
-    "serv.s1dl": "المدة: أسبوع تقريباً",
+    "serv.s1dl": "المدة: يوم تقريباً",
     "serv.s2t": "موقع مع حجز", "serv.s2d": "أضف نموذج طلب حجز وروابط إلى Booking أو Airbnb أو واتساب.",
-    "serv.s2dl": "المدة: أسبوعان تقريباً",
+    "serv.s2dl": "المدة: يومان تقريباً",
     "serv.s3t": "صفحة واحدة فاخرة", "serv.s3d": "صفحة واحدة غامرة لإبهار الزائر من أول تمرير.",
-    "serv.s3dl": "المدة: أسبوع تقريباً",
+    "serv.s3dl": "المدة: يوم تقريباً",
     "serv.s4t": "إعادة تصميم وتحديث", "serv.s4d": "حدّث موقعاً قائماً أو جدّد محتواك بالفرنسية والعربية.",
     "serv.s4dl": "المدة: حسب العرض",
     "serv.from": "تبدأ من", "serv.surdevis": "حسب العرض",
@@ -988,7 +1030,7 @@ const I18N = {
     "faq.q1": "كم يكلف موقع إلكتروني؟",
     "faq.a1a": "تبدأ مواقع العرض من {{BASE_PRICE}} درهم. السعر النهائي يعتمد على اختياراتك: أرسل لك عرض سعر مفصل مجاني قبل أي عمل.",
     "faq.q2": "ما هي مدة التسليم؟",
-    "faq.a2": "في المتوسط أسبوعان إلى ثلاثة: أسبوع للتصميم، ثم التعديلات والنشر. مواقع العرض البسيطة يمكن تسليمها في أسبوع تقريباً.",
+    "faq.a2": "خلال 3 أيام على الأكثر: يوم للتصميم، ثم التعديلات والنشر. مواقع العرض البسيطة غالباً تُسلَّم في 24 إلى 48 ساعة.",
     "faq.q3": "هل يمكنني إضافة الحجز الإلكتروني؟",
     "faq.a3": "نعم: نموذج طلب حجز، أو روابط لحساباتك على Booking أو Airbnb أو واتساب، حسب احتياجك.",
     "faq.q4": "هل سيظهر موقعي على الجوال؟",
@@ -1012,6 +1054,7 @@ const I18N = {
     "form.note": "لا تُخزَّن أي بيانات — الرسالة تذهب مباشرة إلى واتساب أو بريدك.",
     "form.req": "يرجى ملء الحقول المطلوبة.",
     "form.bad": "قبل النشر: استبدل WHATSAPP_NUMBER (والقيم الأخرى) في قسم CONFIG بالكود.",
+    "skip": "انتقل إلى المحتوى",
     "foot.tag": "مواقع إلكترونية مخصصة للريادات والفنادق الصغيرة في المغرب.",
     "foot.nav": "الروابط", "foot.contact_h": "التواصل",
     "foot.demo": "المعرض: معاينات أسلوب — كل موقع للعميل يُصمم خصيصاً له.",
