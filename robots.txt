@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zelligestudio.netlify.app/sitemap.xml
+Sitemap: https://zelligestudio.shop/sitemap.xml
