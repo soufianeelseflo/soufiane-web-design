@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Soufiane Web Design — création de sites web sur mesure pour riads et petits hôtels au Maroc. Devis gratuit, livraison en 2 à 3 semaines.">
-<meta property="og:title" content="Soufiane Web Design — Sites web pour riads et hôtels au Maroc">
+<meta name="description" content="Zellige Studio — création de sites web sur mesure pour riads et petits hôtels au Maroc. Devis gratuit, livraison en 2 à 3 semaines.">
+<meta property="og:title" content="Zellige Studio — Sites web pour riads et hôtels au Maroc">
 <meta property="og:description" content="Design sur mesure, 100% mobile, réservation en ligne. Devis gratuit et sans engagement.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#faf6ee">
-<title>{{AGENCY_NAME}} — Sites web pour riads et hôtels au Maroc</title>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>Zellige Studio — Sites web pour riads et hôtels au Maroc</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b4f43'/%3E%3Cpath d='M50 14l9 27 27 9-27 9-9 27-9-27-27-9 27-9z' fill='%23c9a24b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -605,13 +606,6 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
       <p class="sec-sub" data-i18n="gal.sub">Le style et les possibilités, présentés en avant-première.</p>
       <p class="gal-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8"/></svg><span data-i18n="gal.hint">Click any example to view it full screen.</span></p>
     </div>
-    <div class="gal-banner rv" role="note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4.5M12 17.3v.2"/></svg>
-      <div>
-        <b data-i18n="gal.banner_t">Aperçu de ce que vous obtenez</b>
-        <p data-i18n="gal.banner_d">Ces aperçus montrent le niveau de design, de détail et d'adaptation mobile que vous obtenez — chaque site est conçu sur mesure pour votre établissement, jamais un template.</p>
-      </div>
-    </div>
     <div class="gal-grid">
       <article class="gal-card g1 rv">
         <div class="shot">
@@ -844,13 +838,15 @@ html[lang="ar"] .foot-links h4{letter-spacing:.02em;text-transform:none}
 <script>
 /* ============================================================
    CONFIG — TOUTES LES VALEURS SONT RENSEIGNÉES / ALL VALUES SET
-   1) AGENCY_NAME      : Soufiane Web Design
+   1) AGENCY_NAME      : Zellige Studio
+   ---------------------------------------------------------------
+   Déjà renseignés / already filled :
    2) WHATSAPP_NUMBER  : 212712419007 (0712419007 en format international)
    3) EMAIL_ADDRESS    : soufiane7essmail@gmail.com
    4) BASE_PRICE       : 2500 MAD (le prix final dépend du projet)
    ============================================================ */
 const CONFIG = {
-  AGENCY_NAME: "Soufiane Web Design",
+  AGENCY_NAME: "Zellige Studio",
   WHATSAPP_NUMBER: "212712419007",
   EMAIL_ADDRESS: "soufiane7essmail@gmail.com",
   BASE_PRICE: "2500"
@@ -896,8 +892,6 @@ const I18N = {
     "proc.s4t": "Livraison", "proc.s4d": "Votre site est en ligne, avec tous vos accès.",
     "gal.label": "Galerie", "gal.h2": "Exemples de sites",     "gal.sub": "Le style et les possibilités, présentés en avant-première.",
     "gal.hint": "Click any example to view it full screen.",
-    "gal.banner_t": "Aperçu de ce que vous obtenez",
-    "gal.banner_d": "Ces aperçus montrent le niveau de design, de détail et d'adaptation mobile que vous obtenez — chaque site est conçu sur mesure pour votre établissement, jamais un template.",
     "gal.tag": "Aperçu",
     "gal.d1t": "Riad — site vitrine", "gal.d1s": "Pages : accueil, galerie, contact",
     "gal.d2t": "Hôtel — page réservation", "gal.d2s": "Pages : accueil, chambres, réservation",
@@ -982,8 +976,6 @@ const I18N = {
     "proc.s4t": "التسليم", "proc.s4d": "يصبح موقعك على الإنترنت مع جميع بيانات الدخول.",
     "gal.label": "المعرض", "gal.h2": "أمثلة على مواقع",     "gal.sub": "الأسلوب والإمكانيات، في معاينة خاصة.",
     "gal.hint": "انقر على أي مثال لعرضه بملء الشاشة.",
-    "gal.banner_t": "معاينة لما ستحصل عليه",
-    "gal.banner_d": "تُظهر هذه المعاينات مستوى التصميم والتفاصيل والتكيف مع الجوال الذي ستحصل عليه — كل موقع يُصمم خصيصاً لمنشأتك، وليس قالباً جاهزاً.",
     "gal.tag": "معاينة",
     "gal.d1t": "رياض — موقع عرض", "gal.d1s": "صفحات: الرئيسية، المعرض، الاتصال",
     "gal.d2t": "فندق — صفحة حجز", "gal.d2s": "صفحات: الرئيسية، الغرف، الحجز",
